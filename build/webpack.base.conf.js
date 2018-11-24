@@ -135,8 +135,7 @@ const generateConfig = (env) => {
           include: [
             resolve('src/common/js'),
             resolve('src/components/'),
-            resolve('src/pages/'),
-            resolve('src/api/'),
+            resolve('src/examples/'),
             resolve('src/vendor')
           ],
           exclude: [ resolve('src/dll'), '/node_modules/' ],
