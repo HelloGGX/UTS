@@ -1,5 +1,7 @@
 const webpack = require('webpack')
+const globalConfig = require('./global.conf')
 const CleanWebpack = require('clean-webpack-plugin')
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
@@ -16,14 +18,16 @@ module.exports = {
     splitChunks: {
       chunks: 'all', // 对所有文件处理
       automaticNameDelimiter: '-',
-      name: 'libs',
-      filename: 'js/libs/[name].[hash:5].js'
+      name: 'commons',
+      filename: 'js/libs/[name].[hash:5].js',
+      minChunks: Math.ceil(globalConfig.pages.length / 3) // 至少被1/3页面的引入才打入common包
     },
     runtimeChunk: {
       name: 'manifest'
     }
   },
   plugins: [
+    new LodashModuleReplacementPlugin(),
     new webpack.HashedModuleIdsPlugin(),
     new webpack.DllReferencePlugin({
       manifest: require('../src/dll/libs-manifest.json'),

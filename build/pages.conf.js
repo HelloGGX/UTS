@@ -28,7 +28,7 @@ const normalize = (title, pageName) => {
     entry: entry,
     template: url + '.html',
     name: pageName,
-    chunks: [ 'manifest', 'libs', 'base', pageName ]
+    chunks: [ 'manifest', 'commons', 'base', pageName ]
   }
 }
 const configPages = []

@@ -1,15 +1,16 @@
 const productionConfig = require('./webpack.prod.conf') // 生产环境配置
 const developmentConfig = require('./webpack.dev.conf') // 开发环境配置
-const ExtractTextWebpack = require('extract-text-webpack-plugin') // 提取css
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+// const HappyPack = require('happypack')
 const globalConfig = require('./global.conf')
 const pagesConfig = require('./pages.conf')
 const merge = require('webpack-merge')
 const path = require('path')
 const webpack = require('webpack')
 
-const extractCss = new ExtractTextWebpack({
+const extractCss = new MiniCssExtractPlugin({
   filename: 'css/[name]-bundle-[chunkHash:5].css',
-  allChunks: false // 指定提取css的范围
+  chunkFilename: 'css/[name]-[id].css'
 })
 
 function resolve (dir) {
@@ -19,6 +20,7 @@ function resolve (dir) {
 const generateConfig = (env) => {
   const scriptLoader = [ 'babel-loader' ]
   const cssLoaders = [
+    env === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
     {
       loader: 'css-loader',
       options: {
@@ -45,20 +47,12 @@ const generateConfig = (env) => {
       }
     }
   ]
-  const styleLoader = env === 'production' ? extractCss.extract({
-    fallback: {
-      loader: 'style-loader',
-      options: {
-        sourceMap: env === 'development'
-      }
-    },
-    use: cssLoaders
-  })
-    : [
-      {
-        loader: 'style-loader'
-      }
-    ].concat(cssLoaders)
+  // const styleLoader = [{
+  //   loader: 'style-loader',
+  //   options: {
+  //     sourceMap: env === 'development'
+  //   }
+  // }].concat(cssLoaders)
 
   const fileLoader = (path) => {
     return env === 'development'
@@ -144,12 +138,12 @@ const generateConfig = (env) => {
         {
           // 处理less
           test: /\.less$/,
-          use: styleLoader
+          use: cssLoaders
         },
         {
           // 处理css
           test: /\.css$/,
-          use: styleLoader
+          use: cssLoaders
         },
         {
           // 图片的转换和压缩
