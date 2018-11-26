@@ -5,8 +5,8 @@ const pages = [
     pageName: 'index'
   },
   {
-    title: '按钮演示',
-    pageName: 'btn'
+    title: '登录页',
+    pageName: 'login'
   }
 ]
 const dependencies = [

@@ -47,14 +47,6 @@ module.exports = {
     }),
     new BundleAnalyzerPlugin(), // 打包分析
 
-    // new webpack.optimize.CommonsChunkPlugin({
-    //     names: ['manifest', 'libs'].reverse(), //因为用了DllReferencePlugin来优化打包速度所以这里分离出的libs是libs.dll.js的类似sourcemap的索引
-    //     filename: 'js/libs/[name].[hash:5].js',
-    //     minChunks: Infinity
-    // }),
-    // new HtmlInlinkChunkPlugin({// 把该页的js追加到html页面
-    //   inlineChunks: ['manifest']
-    // }),
     // new CopyWebpackPlugin([ // 支持输入一个数组
     //   {
     //     from: resolve('src/api'), // 将src/api
