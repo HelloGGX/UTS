@@ -16,7 +16,7 @@ let Login = (function ($) {
     }
     // public
     init () {
-      $('body').css('backgroundColor', 'red')
+
     }
     // Static
   }

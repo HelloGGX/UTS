@@ -10,7 +10,7 @@ const webpack = require('webpack')
 
 const extractCss = new MiniCssExtractPlugin({
   filename: 'css/[name]-bundle-[chunkHash:5].css',
-  chunkFilename: 'css/[name]-[id].css'
+  chunkFilename: 'css/[name]-bundle-[chunkHash:5].css'
 })
 
 function resolve (dir) {
@@ -20,7 +20,6 @@ function resolve (dir) {
 const generateConfig = (env) => {
   const scriptLoader = [ 'babel-loader' ]
   const cssLoaders = [
-    env === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
     {
       loader: 'css-loader',
       options: {
@@ -47,12 +46,12 @@ const generateConfig = (env) => {
       }
     }
   ]
-  // const styleLoader = [{
-  //   loader: 'style-loader',
-  //   options: {
-  //     sourceMap: env === 'development'
-  //   }
-  // }].concat(cssLoaders)
+  const styleLoader = env === 'production'
+    ? [{
+      loader: MiniCssExtractPlugin.loader
+    }].concat(cssLoaders) : [{
+      loader: 'style-loader'
+    }].concat(cssLoaders)
 
   const fileLoader = (path) => {
     return env === 'development'
@@ -138,12 +137,12 @@ const generateConfig = (env) => {
         {
           // 处理less
           test: /\.less$/,
-          use: cssLoaders
+          use: styleLoader
         },
         {
           // 处理css
           test: /\.css$/,
-          use: cssLoaders
+          use: styleLoader
         },
         {
           // 图片的转换和压缩
