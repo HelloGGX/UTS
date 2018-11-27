@@ -1,6 +1,6 @@
 const productionConfig = require('./webpack.prod.conf') // 生产环境配置
 const developmentConfig = require('./webpack.dev.conf') // 开发环境配置
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin') // 提取css
 // const HappyPack = require('happypack')
 const globalConfig = require('./global.conf')
 const pagesConfig = require('./pages.conf')

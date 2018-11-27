@@ -1,5 +1,6 @@
 // import * as utils from 'vendor/utils'
 import $ from 'jquery'
+import './login.less'
 
 let Login = (function ($) {
   // const NAME = 'login'

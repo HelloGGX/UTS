@@ -1,11 +1,5 @@
 @import './grid.less';
-body {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #333;
-    background-color: #fff;
-}
+@import './variable.less';
 body, html {
     margin: 0;
     padding: 0;
@@ -13,5 +7,26 @@ body, html {
     font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: @font-size-medium/1.5;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+.clearfix{
+    *zoom: 1;
+    &::before,&::after{
+        content: " ";
+        display:table;
+    }
+    &::after{
+        height: 0;
+        line-height: 0;
+        visibility: hidden;
+        clear: both;
+    }
 }
 

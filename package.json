@@ -33,6 +33,7 @@
     "clean-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^1.0.1",
+    "cssnano": "^4.1.7",
     "eslint": "^5.9.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-loader": "^2.1.1",
@@ -56,6 +57,7 @@
     "less-loader": "^4.1.0",
     "lodash-webpack-plugin": "^0.11.5",
     "mini-css-extract-plugin": "^0.4.5",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "parallel-webpack": "^2.3.0",
     "postcss": "^7.0.6",
     "postcss-loader": "^3.0.0",
@@ -72,6 +74,7 @@
     "workbox-webpack-plugin": "^3.6.3"
   },
   "dependencies": {
+    "amfe-flexible": "^2.2.1",
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "jquery": "^3.3.1",

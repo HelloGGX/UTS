@@ -1,6 +1,5 @@
 import './index.less'
 import 'common/css/button.less'
-
 // import * as utils from 'vendor/utils'
 import $ from 'jquery'
 
