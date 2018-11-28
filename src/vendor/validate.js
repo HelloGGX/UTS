@@ -43,7 +43,7 @@ let otherIdNo = function () {
   return /^\s*[0-9a-zA-Z]{1,20}\s*$/
 }
 let mobile = function () {
-  return /^[0-9]{11}$/
+  return /^[1][3,4,5,7,8][0-9]{9}$/
 }
 let email = function () {
   return /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/
@@ -68,7 +68,7 @@ let captcha = function () {
 }
 
 let password = function () {
-  return /^[^\s]{6,16}$/
+  return /^[a-zA-Z0-9]{6,16}$/
 }
 let validate = {
   id: validateId,

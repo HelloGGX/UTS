@@ -44,7 +44,7 @@ svg {
 .slider-pagi {
   position: absolute;
   z-index: 3;
-  left: 50%;
+  right: -1rem;
   bottom: 0.24rem;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -55,11 +55,10 @@ svg {
   position: relative;
   display: inline-block;
   vertical-align: top;
-  width: 0.24rem;
-  height: 0.24rem;
+  width: 0.64rem;
+  height: 0.16rem;
   margin: 0 0.06rem;
-  border-radius: 50%;
-  border: 2px solid #fff;
+  border: 2px solid rgba(255, 255, 255, 0.8);
   cursor: pointer;
 }
 .slider-pagi__elem:before {
@@ -67,10 +66,9 @@ svg {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 0.144rem;
-  height:0.144rem;
-  background: #fff;
-  border-radius: 50%;
+  width: 0.48rem;
+  height:0.08rem;
+  background: rgba(255, 255, 255, 0.8);
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;

@@ -94,6 +94,9 @@
                             transition: transform 300ms ease;
 
                         }
+                        .word--active::before {
+                             color: #f2f2f2;
+                        }
                         .word-username:before {
                             content: '请输入您的用户名'; 
                         }
@@ -126,6 +129,7 @@
                             left: 0;
                             z-index: -2;
                         }
+                        
                         input:focus ~ .word:before {
                             color: #1A73E8;
                             transform: translateY(-1em) scale(0.65);
@@ -139,6 +143,55 @@
                             transform: scaleX(1);
                             transform-origin: center;
                             transition: all 300ms cubic-bezier(0.6, 0.05, 0.01, 0.99);
+                        }
+                    }
+                    .check--pass {
+                        display: none
+                    }
+                    .check--error {
+                        display: none
+                    }
+                    .pass {
+                        .underline{
+                            &::before{
+                                background: #67c23a;
+                                transform: scaleX(1);
+                                transform-origin: center;
+                                transition: all 300ms cubic-bezier(0.6, 0.05, 0.01, 0.99);
+                            }
+                            .check--pass{
+                                background-image: url('../../assets/imgs/Checked.png');
+                                position: absolute;
+                                background-repeat: no-repeat;
+                                right: 0;
+                                bottom: 0.1rem;
+                                width: 0.3rem;
+                                height: 0.3rem;
+                                background-size: 100%;
+                                display: block;
+                            }
+
+                        }
+                    }
+                    .error {
+                        .underline{
+                            &::before{
+                                background: red;
+                                transform: scaleX(1);
+                                transform-origin: center;
+                                transition: all 300ms cubic-bezier(0.6, 0.05, 0.01, 0.99);
+                            }
+                            .check--error{
+                                background-image: url('../../assets/imgs/Cancel.png');
+                                position: absolute;
+                                background-repeat: no-repeat;
+                                right: 0;
+                                bottom: 0.1rem;
+                                width: 0.3rem;
+                                height: 0.3rem;
+                                background-size: 100%;
+                                display: block;
+                            }
                         }
                     }
                     .btn-submit {

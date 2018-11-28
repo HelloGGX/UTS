@@ -1,7 +1,6 @@
 const webpack = require('webpack')
 const globalConfig = require('./global.conf')
 const CleanWebpack = require('clean-webpack-plugin')
-const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
@@ -27,7 +26,6 @@ module.exports = {
     }
   },
   plugins: [
-    new LodashModuleReplacementPlugin(),
     new webpack.HashedModuleIdsPlugin(),
     new webpack.DllReferencePlugin({
       manifest: require('../src/dll/libs-manifest.json'),

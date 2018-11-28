@@ -2,6 +2,7 @@ const productionConfig = require('./webpack.prod.conf') // 生产环境配置
 const developmentConfig = require('./webpack.dev.conf') // 开发环境配置
 const MiniCssExtractPlugin = require('mini-css-extract-plugin') // 提取css
 // const HappyPack = require('happypack')
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const globalConfig = require('./global.conf')
 const pagesConfig = require('./pages.conf')
 const merge = require('webpack-merge')
@@ -169,6 +170,7 @@ const generateConfig = (env) => {
     },
     plugins: [
       extractCss,
+      new LodashModuleReplacementPlugin(),
       new webpack.ProvidePlugin({
         $: 'jquery'
       })
