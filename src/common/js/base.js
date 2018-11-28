@@ -1,6 +1,6 @@
 import 'common/css/base.less'
 import 'normalize.css'
-
+import { isIE } from 'vendor/utils'
 // var deviceWidth
 // setHtmlFontSize()
 
@@ -19,13 +19,15 @@ var winWidth = document.documentElement.offsetWidth ||
   document.body.offsetWidth
 winWidth = winWidth < 1366 ? 1366 : winWidth
 var oHtml = document.getElementsByTagName('html')[0]
-oHtml.style.fontSize = 100 * winWidth / 1920 + 'px'
+var oBody = document.getElementsByTagName('body')[0]
+!isIE ? oHtml.style.fontSize = 100 * winWidth / 1920 + 'px' : oBody.style.fontSize = 100 * winWidth / 1920 + 'px'
 
 if (window.addEventListener) {
   window.addEventListener('resize', function () {
     var winWidth = document.documentElement.offsetWidth || document.body.offsetWidth
     winWidth = winWidth < 1400 ? 1400 : winWidth
     var oHtml = document.getElementsByTagName('html')[0]
-    oHtml.style.fontSize = 100 * winWidth / 1920 + 'px'
+    var oBody = document.getElementsByTagName('body')[0]
+    !isIE ? oHtml.style.fontSize = 100 * winWidth / 1920 + 'px' : oBody.style.fontSize = 100 * winWidth / 1920 + 'px'
   }, false)
 }

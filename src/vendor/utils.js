@@ -30,15 +30,6 @@ export function _createClass (Constructor, protoProps, staticProps) {
   return Constructor
 }
 
-export function debounce (func, delay) {
-  let timer
-
-  return function (...args) {
-    if (timer) {
-      clearTimeout(timer)
-    }
-    timer = setTimeout(() => {
-      func.apply(this, args)
-    }, delay)
-  }
+export function isIE () { // ie?
+  if (!!window.ActiveXObject || 'ActiveXObject' in window) { return true } else { return false }
 }

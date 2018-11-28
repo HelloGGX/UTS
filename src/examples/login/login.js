@@ -49,8 +49,8 @@ let Login = (function ($) {
       })
     }
     validate (type, val) { // 验证
-      if ($(type).attr('id') === 'phone') {
-        if (vali.mobile().test(val)) {
+      if ($(type).attr('id') === 'username') {
+        if (vali.name().test(val)) {
           $(type).parent().addClass('pass')
           $(type).parent().removeClass('error')
           return true
@@ -88,7 +88,10 @@ let Login = (function ($) {
       var input = $('.input__field')
       _.debounce(function () {
         for (let i = 0; i < input.length; i++) {
-          _thi.validate(input[i], $(input[i]).val())
+          var result = _thi.validate(input[i], $(input[i]).val())
+        }
+        if (result) {
+          alert('登录成功')
         }
       }, 900)()
     }
