@@ -11,10 +11,13 @@
         overflow: hidden;
         height: 100%;
         &:first-child {
-            width: 40%;
+            width: 100%;
         }
         &:last-child {
-             width: 60%;
+             width: 40%;
+             position: absolute;
+             right: 0;
+             z-index: 9;
         }
     }
 }
@@ -28,6 +31,8 @@
         top:50%;
         left:50%;
         transform:translate(-50%,-50%);
+        background-color: #fff;
+    padding: 60px 40px;
         .form-tabs{
             .form-tabs-bar{
                 height: 0.74rem;

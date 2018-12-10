@@ -11,6 +11,12 @@
 
 <body>
     <div class="entry clearfix">
+       
+        <div class="entry-item">
+            <div class="slider-panel">
+                <%= require('html-loader!../../components/slider/slider.html')  %>
+            </div>
+        </div>
         <div class="entry-item">
             <div class="form">
                 <div class="form-container">
@@ -27,7 +33,7 @@
                             <div class="form-tabs-panel">
                                 <div class="login-panel">
                                     <div class="input">
-                                        <input class="input__field"  type="text" id="username" maxlength="15">
+                                        <input class="input__field" type="text" id="username" maxlength="15">
                                         <div class="item word word-username"></div>
                                         <div class="item underline">
                                             <div class="check--pass"></div>
@@ -43,7 +49,8 @@
                                         </div>
                                     </div>
                                     <div class="input">
-                                        <input class="input__field" type="text" id="code" autocomplete="off" tabindex="3" maxlength="4">
+                                        <input class="input__field" type="text" id="code" autocomplete="off" tabindex="3"
+                                            maxlength="4">
                                         <div class="item word word-code"></div>
                                         <div class="item underline">
                                             <div class="check--pass"></div>
@@ -61,11 +68,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="entry-item">
-            <div class="slider-panel">
-                <%= require('html-loader!../../components/slider/slider.html')  %>
             </div>
         </div>
     </div>

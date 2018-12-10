@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%= require('html-loader!../../components/meta/meta.html')  %>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+
+</head>
+
+<body>
+    <div id="root">
+        <div class="screen-xl">
+            <div class="uts-layout uts-layout-has-sider">
+                <div class="uts-layout-sider">
+                    <%= require('html-loader!../../components/sider-left/sider-left.html')  %>
+                </div>
+                <div class="uts-layout">
+                    <div class="uts-layout-header">
+                        
+                    </div>
+                    <div class="uts-layout-content">
+                        
+                    </div>
+                    <div class="uts-layout-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -29,7 +29,3 @@ export function _createClass (Constructor, protoProps, staticProps) {
   if (staticProps) _defineProperties(Constructor, staticProps)
   return Constructor
 }
-
-export function isIE () { // ie?
-  if (!!window.ActiveXObject || 'ActiveXObject' in window) { return true } else { return false }
-}

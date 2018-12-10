@@ -7,6 +7,10 @@ const pages = [
   {
     title: '登录页',
     pageName: 'login'
+  },
+  {
+    title: '主界面',
+    pageName: 'admin-index'
   }
 ]
 const dependencies = [
