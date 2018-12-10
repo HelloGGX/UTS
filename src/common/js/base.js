@@ -1,5 +1,6 @@
-import 'common/css/base.less'
 import 'normalize.css'
+import 'common/css/base.less'
+
 // var deviceWidth
 // setHtmlFontSize()
 
