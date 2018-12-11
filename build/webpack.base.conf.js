@@ -78,6 +78,30 @@ const generateConfig = (env) => {
         }
       ]
   }
+  const fontLoader = (url) => {
+    return env === 'development'
+      ? [
+        {
+          loader: 'file-loader',
+          options: {
+            name: '[name]-[hash:5].[ext]',
+            publicPath: '../fonts',
+            outputPath: url
+          }
+        }
+      ]
+      : [
+        {
+          loader: 'url-loader', // 带转base64功能
+          options: {
+            name: '[name]-[hash:5].[ext]',
+            limit: 1600, // 1600=16kb
+            publicPath: '/fonts',
+            outputPath: url
+          }
+        }
+      ]
+  }
 
   const entry = (env) => {
     let obj = { base: resolve('src/common/js/base.js') }
@@ -112,7 +136,7 @@ const generateConfig = (env) => {
       path: resolve('dist'),
       filename: 'js/[name].[hash:5].js',
       chunkFilename: 'js/[name].[chunkhash:5].js',
-      publicPath: env === 'production' ? '/' : '',
+      publicPath: env === 'production' ? './' : '',
       libraryTarget: 'umd'
     },
     module: {
@@ -163,8 +187,8 @@ const generateConfig = (env) => {
         },
         {
           // 处理字体文件
-          test: /\.(eot|woff2?|ttf|svg)$/,
-          use: fileLoader('fonts/')
+          test: /\.(eot|woff2?|ttf|woff|otf|svg)$/,
+          use: fontLoader('fonts/')
         }
       ]
     },

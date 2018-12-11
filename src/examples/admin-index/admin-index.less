@@ -1,0 +1,26 @@
+.uts-layout, .uts-layout * {
+    box-sizing: border-box;
+}
+.uts-layout {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    background: #f0f2f5;
+    min-height: 0;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    &.uts-layout-has-sider {
+        flex-direction: row;
+    }
+}
+.uts-layout-left {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    border-right: 2px solid #1890ff;
+    z-index: 1001;
+}

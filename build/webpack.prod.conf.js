@@ -34,7 +34,7 @@ module.exports = {
     new AddAssetHtmlPlugin({
       filepath: resolve('src/dll/libs.dll.js'),
       includeSourcemap: false,
-      publicPath: '/js/libs/',
+      publicPath: './js/libs/',
       outputPath: './js/libs'
     }),
     new WorkboxPlugin.GenerateSW({
