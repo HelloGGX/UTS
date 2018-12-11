@@ -73,7 +73,7 @@ const generateConfig = (env) => {
             name: '[name]-[hash:5].[ext]',
             limit: 1600, // 1600=16kb
             outputPath: path,
-            publicPath: '/imgs'
+            publicPath: './imgs'
           }
         }
       ]
@@ -96,7 +96,7 @@ const generateConfig = (env) => {
           options: {
             name: '[name]-[hash:5].[ext]',
             limit: 1600, // 1600=16kb
-            publicPath: '/fonts',
+            publicPath: '../fonts',
             outputPath: url
           }
         }

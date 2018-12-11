@@ -1,5 +1,6 @@
 import './admin-index.less'
 import sider from 'components/sider-left/sider-left'
+import { banner } from 'components/banner/banner'
 import { editOpts } from 'vendor/utils'
 import $ from 'jquery'
 
@@ -17,8 +18,8 @@ var index = (function () { // 侧边栏函数
     scrollTop: 0,
     // 公共函数和私有函数写这里
     init: function () { // 初始化函数，公共函数这样写
-      sider({}).init()
-
+      sider({}).init()// 侧边栏函数
+      banner({}).init()// 顶部导航函数
       // require.ensure([], () => { // 插件这样调用
       //   require('components/alert/alert')
       // }, 'alert')
