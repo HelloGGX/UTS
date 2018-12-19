@@ -53,3 +53,76 @@ export function editOpts (Constr) {
     return setter(opts)
   }
 }
+export function debounce (func, delay) {
+  let timer
+  return function (...args) {
+    if (timer) {
+      clearTimeout(timer)
+    }
+    timer = setTimeout(() => {
+      func.apply(this, args)
+    }, delay)
+  }
+}
+// export function debounce (func, wait, leading, trailing) {
+//   var timer; var lastCall = 0; var flag = true
+//   return function () {
+//     var context = this
+//     var args = arguments
+//     var now = +new Date()
+//     if (now - lastCall < wait) {
+//       flag = false
+//       lastCall = now
+//     } else {
+//       flag = true
+//     }
+//     if (leading && flag) {
+//       lastCall = now
+//       return func.apply(context, args)
+//     }
+//     if (trailing) {
+//       clearTimeout(timer)
+//       timer = setTimeout(function () {
+//         flag = true
+//         func.apply(context, args)
+//       }, wait)
+//     }
+//   }
+// }
+var Observer = (function () {
+  var _messages = {}
+  return {
+    // 注册信息接口
+    regist (type, fn) {
+      if (typeof _messages[type] === 'undefined') {
+        _messages[type] = [fn]
+      } else {
+        _messages[type].push(fn)
+      }
+    },
+    // 发布信息接口
+    fire (type, args) {
+      if (!_messages[type]) {
+        return
+      }
+      var events = {
+        type: type,
+        args: args || {}
+      }
+      var len = _messages[type].length
+      for (let i = 0; i < len; i++) {
+        _messages[type][i].call(this, events)
+      }
+    },
+    // 移除信息接口
+    remove (type, fn) {
+      if (_messages[type] instanceof Array) {
+        var i = _messages[type].length - 1
+        for (; i >= 0; i--) {
+          _messages[type][i] === fn && _messages[type].splice(i, 1)
+        }
+      }
+    }
+  }
+})()
+export { Observer }

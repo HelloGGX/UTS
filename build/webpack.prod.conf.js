@@ -18,7 +18,8 @@ module.exports = {
       chunks: 'all', // 对所有文件处理
       automaticNameDelimiter: '-',
       name: 'commons',
-      filename: 'js/libs/[name].[hash:5].js',
+      filename: 'js/libs/[name].bundle.js',
+      // filename: 'js/libs/[name].[hash:5].js',
       minChunks: Math.ceil(globalConfig.pages.length / 3) // 至少被1/3页面的引入才打入common包
     },
     runtimeChunk: {
@@ -34,7 +35,7 @@ module.exports = {
     new AddAssetHtmlPlugin({
       filepath: resolve('src/dll/libs.dll.js'),
       includeSourcemap: false,
-      publicPath: './js/libs/',
+      publicPath: './crm/dist/js/libs/',
       outputPath: './js/libs'
     }),
     new WorkboxPlugin.GenerateSW({

@@ -1,9 +1,9 @@
+@import '../../common/css/variable.less';
 .uts-layout-sider {
     transition: all 0.2s;
     position: relative;
     background: #001529;
     min-width: 0;
-    overflow-x: hidden;
 }
 .uts-menu-hidden{
     display: none;
@@ -52,16 +52,16 @@
     right: 0;
     content: "";
 }
-.utsicon{
-    display: inline-block;
-    font-style: normal;
-    text-align: center;
-    text-transform: none;
-    line-height: 0;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+// .utsicon{
+//     display: inline-block;
+//     font-style: normal;
+//     text-align: center;
+//     text-transform: none;
+//     line-height: 0;
+//     text-rendering: optimizeLegibility;
+//     -webkit-font-smoothing: antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+// }
 .uts-menu-submenu-title {
     .utsicon{
         min-width: 14px;
@@ -191,8 +191,14 @@
                     right: 16px;
                     width: 10px;
                 }
+                &.uts-menu-submenu-active{
+                    background-color: @color-sub-theme ;
+                    border-right: 0;
+                    color: #ffffff;
+                }
             }
         }
+        
         .uts-menu-sub.uts-menu-inline{
             padding: 0;
             border: 0;
@@ -268,7 +274,7 @@
                 margin-left: 0;
                 left: 0;
                 &.uts-menu-item-selected{
-                    background-color: #1890ff;
+                    background-color: @color-sub-theme;
                     border-right: 0;
                     color: #ffffff;
                     &>a{
@@ -286,8 +292,62 @@
         }
         .uts-menu-root.uts-menu-inline{
             box-shadow: none;
-        }      
+        }   
+        .uts-menu-inline-collapsed{
+            &>.uts-menu-submenu{
+                &>.uts-menu-submenu-title{
+                    left: 0;
+                    text-overflow: clip;
+                    padding: 0 32px!important;
+                    line-height: 40px;
+                    height: 40px;
+                    .uts-menu-submenu-arrow {
+                        display: none;
+                    }
+                    .utsicon{
+                        font-size: 16px;
+                        line-height: 40px;
+                        margin: 0;
+                            &+span {
+                            max-width: 0;
+                            display: inline-block;
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .uts-menu-vertical {
+            .uts-menu-submenu-title {
+                 padding-right: 34px;
+                padding: 0 16px;
+                font-size: 14px;
+                line-height: 40px;
+                height: 40px;
+                margin-top: 4px;
+                margin-bottom: 4px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .uts-menu-submenu {
+                padding-bottom: .01px;
+            }
+            .uts-menu-submenu-vertical{
+                .uts-menu {
+                    position: absolute;
+                    left: 80px;
+                    top: 0;
+                    width: auto;
+                    .uts-menu-item-selected{
+                        background-color: #1890ff;
+                        border-right: 0;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }   
     }
 }
+
 
 

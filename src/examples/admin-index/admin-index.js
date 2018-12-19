@@ -1,7 +1,8 @@
 import './admin-index.less'
 import sider from 'components/sider-left/sider-left'
 import { banner } from 'components/banner/banner'
-import { editOpts } from 'vendor/utils'
+import { tab } from 'components/tab/tab'
+import { editOpts, Observer } from 'vendor/utils'
 import $ from 'jquery'
 
 /** ************当一个操作会影响到其他多个模块函数中的数据或者功能的时候用观察者模式******************* */
@@ -18,11 +19,31 @@ var index = (function () { // 侧边栏函数
     scrollTop: 0,
     // 公共函数和私有函数写这里
     init: function () { // 初始化函数，公共函数这样写
-      sider({}).init()// 侧边栏函数
-      banner({}).init()// 顶部导航函数
-      // require.ensure([], () => { // 插件这样调用
-      //   require('components/alert/alert')
-      // }, 'alert')
+      sider({
+        callBack: function (e) {
+          tab({}).addTab(e)
+        }
+      }).init()// 侧边栏函数
+
+      banner({
+        callBack: function () { // 点击触发缩小放大
+          if ($('.uts-layout-sider').width() === 80) {
+            Observer.fire('lg')
+          } else {
+            Observer.fire('ms')
+          }
+        }
+      }).init()// 顶部导航函数
+
+      tab({
+        callBack: function (e, type) {
+          if (type === 'open') { // 当打开新的tab选项卡
+            sider({}).selected(e)
+          } else { // 当关闭已有的tab选项卡
+            sider({}).cancel(e)
+          }
+        }
+      }).init()// 选项卡导航栏函数
     }
   }
   return editOpts(Index)

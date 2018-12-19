@@ -11,6 +11,10 @@ const pages = [
   {
     title: '主界面',
     pageName: 'admin-index'
+  },
+  {
+    title: 'CRM 表单',
+    pageName: 'crm-form'
   }
 ]
 const dependencies = [

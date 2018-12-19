@@ -1,0 +1,192 @@
+@import '../../common/css/variable.less';
+
+.uts-components-header-header{
+    height: 64px;
+    padding: 0;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,21,41,.4);
+    position: relative;
+    border-bottom: 2px solid @color-sub-theme;
+}
+.uts-components-header-trigger {
+    font-size: 20px;
+    height: 64px;
+    cursor: pointer;
+    transition: all .3s,padding 0s;
+    padding: 22px 24px;
+    color: @color-dialog-background
+}
+.uts-components-header-search-headerSearch{
+    .fa-search {
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .uts-components-header-search-input {
+        transition: width .3s,margin-left .3s;
+        width: 0;
+        background: transparent;
+        border-radius: 0;
+    }
+}
+.uts-components-header-search-headerSearch {
+    .uts-components-header-search-input{
+        border-bottom: 1px solid #d9d9d9;
+        &:focus{
+           border-bottom: 1px solid #d9d9d9;
+        }
+        &:hover{
+           border-bottom: 1px solid #d9d9d9; 
+        }
+    }
+}
+.uts-components-header-right {
+    float: right;
+    height: 100%;
+    padding: 0;
+    .uts-components-header-action{
+        cursor: pointer;
+        padding: 0 12px;
+        display: inline-block;
+        transition: all .3s;
+        height: 100%;
+        position: relative;
+        &>i {
+            vertical-align: middle;
+            color: rgba(0,0,0,.65);
+        }
+        &:hover {
+            background: rgba(0,0,0,.025);
+        }
+    }
+    .uts-components-header-search {
+        padding: 0 12px;
+    }
+    .uts-components-header-account{
+        .uts-components-header-avatar {
+            margin: 20px 8px 20px 0;
+            color: @color-sub-theme;
+            background: hsla(0,0%,100%,.85);
+            vertical-align: top;
+        }
+        .uts-avatar-sm>* {
+            line-height: 24px;
+        }
+        .uts-avatar>img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    } 
+}
+.uts-select {
+    font-family: Chinese Quote,-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    color: rgba(0,0,0,.65);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    outline: 0;
+}
+.uts-select-auto-complete {
+    font-family: Chinese Quote,-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    color: rgba(0,0,0,.65);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.uts-badge {
+    font-family: Chinese Quote,-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    color: rgba(0,0,0,.65);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    color: unset;
+}
+.uts-components-notice-icon{
+    padding: 4px;
+}
+.uts-badge-count {
+    top: -10px;
+    height: 16px;
+    border-radius: 10px;
+    min-width: 16px;
+    background: #f5222d;
+    color: #fff;
+    line-height: 16px;
+    text-align: center;
+    padding: 0 6px;
+    font-size: 12px;
+    font-weight: 400;
+    white-space: nowrap;
+    box-shadow: 0 0 0 1px #fff;
+    z-index: 10;
+}
+.uts-badge-multiple-words {
+    padding: 0 8px;
+}
+.uts-badge-count, .uts-badge-dot {
+    position: absolute;
+    right: 0;
+    transform: translateX(50%);
+    transform-origin: 100%;
+}
+.uts-scroll-number {
+    overflow: hidden;
+}
+.uts-scroll-number-only {
+    display: inline-block;
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    height: 20px;
+    &>p {
+      height: 20px;
+      margin: 0;
+    }
+}
+.uts-avatar {
+    font-family: Chinese Quote,-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    color: rgba(0,0,0,.65);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+    background: #ccc;
+    color: #fff;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+}
+.uts-avatar-image {
+    background: transparent;
+}
+.uts-avatar-sm {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 50%;
+}

@@ -1,0 +1,196 @@
+@import '../../common/css/variable.less';
+
+.uts-title-box {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: none;
+    border-bottom: 1px solid @color-theme;
+    overflow: hidden;
+    z-index: 999;
+    .uts-tab-title {
+        border: none;
+        padding: 0px;
+        margin: 0px;
+        height: 40px;
+        background: #fafafa;
+        width: auto;
+        position: relative;
+        border-right: 1px solid #E5E5E5;
+        -moz-box-shadow:0px 4px 6px #f2f2f2; -webkit-box-shadow:0px 4px 6px #f2f2f2; box-shadow:0px 4px 6px #f2f2f2;
+    }
+    .uts-btn-group {
+        height: 40px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        text-align: right;
+        z-index: 1005;
+        .uts-pull-right {
+            background: #FFFFFF;
+            border-left: 1px solid #d2d2d2;
+        }
+        .uts-press {
+            display: block;
+            vertical-align: top;
+            margin: 0px;
+            padding: 0px;
+            float: left;
+        }
+        .refresh {
+            width: 68px;
+            height: 40px;
+            background: @color-sub-theme;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            i {
+                font-weight: normal;
+                font-size: 15px;
+                color: #ffffff;
+            }
+            cite {
+                font-size: 15px;
+                line-height: 40px;
+                padding-left: 1px;
+                color: #ffffff;
+            
+            }
+        }
+    }
+    .uts-btn-default {
+        display: block;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        float: left;
+        cursor: pointer;
+        background: #FFFFFF;
+         i {
+            display: block;
+            line-height: 40px;
+            width: 100%;
+            height: 100%;
+            font-size: 18px !important;
+            text-align: center;
+            color: @color-theme;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    }
+    .uts-pull-left {
+        border-right: 1px solid #d2d2d2;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+        border-left: 2px solid @color-theme;
+    }
+    .hide {
+        display: none !important;
+    }
+}
+.uts-tab-title {
+    overflow: hidden;
+    position: relative;
+    left: 0;
+    height: 40px;
+    white-space: nowrap;
+    font-size: 0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    transition: all .2s;
+    -ms-transition:all 0.2s;
+    -o-transition:all 0.2s;
+    -webkit-transition: all .2s;
+    li {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        vertical-align: middle;
+        font-size: 14px;
+        transition: all .2s;
+        -webkit-transition: all .2s;
+        -ms-transition:all 0.2s;
+        -o-transition:all 0.2s;
+        position: relative;
+        line-height: 40px;
+        min-width: 65px;
+        padding: 0 15px;
+        text-align: center;
+        cursor: pointer;
+        .uts-tab-close {
+            position: relative;
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            line-height: 20px;
+            margin-left: 8px;
+            text-align: center;
+            font-size: 14px;
+            color: #c2c2c2;
+            transition: all .2s;
+            -webkit-transition: all .2s;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            right: 100%;
+            bottom: 0;
+            background: #818080;
+            height: 4px;
+            -webkit-transition-property: right;
+            transition-property: right;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+    }
+}
+ul.uts-tab-title li {
+    background: #fafafa;
+    cursor: pointer;
+    border-top: none;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    position: relative;
+    overflow: hidden;
+    width: 134px;
+    i {
+        padding-right: 3px;
+        line-height: 40px;
+    }
+    cite {
+        line-height: 40px;
+    }
+    &.uts-tab-active{
+        background: @color-sub-theme;
+        color: #ffffff;
+        &::after{         
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: '';
+            width: 100%;
+            height: 41px;
+            border-width: 1px;
+            border-style: solid;
+            border-bottom-color: #fff;
+            border-radius: 2px 2px 0 0;
+            box-sizing: border-box;
+            pointer-events: none;
+            border-top: none;
+            border-left: none;
+            border-bottom: 1px solid @color-sub-theme;
+        }
+    }
+}

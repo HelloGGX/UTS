@@ -1,7 +1,11 @@
 import 'normalize.css'
-import 'common/css/base.less'
-import 'common/css/fonts-less/font-awesome.less'
+import 'common/css/index.less'
 
+import Input from 'components/input/input'
+
+export {
+  Input
+}
 // var deviceWidth
 // setHtmlFontSize()
 

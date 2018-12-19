@@ -2,7 +2,7 @@
 import $ from 'jquery'
 import './login.less'
 import 'components/slider/slider'
-import vali from 'vendor/validate'
+import { vali } from 'vendor/validate'
 import _ from 'lodash'
 
 let Login = (function ($) {
@@ -11,8 +11,9 @@ let Login = (function ($) {
   // const DATA_KEY = 'uts.login'
 
   class Login {
-    constructor ({ userInfo = {} } = {}) {
+    constructor ({ userInfo = {}, deviceWidth = 1920 } = {}) {
       this.userInfo = userInfo
+      this.deviceWidth = deviceWidth
     }
     // Getters
     static get VERSION () {
@@ -20,10 +21,22 @@ let Login = (function ($) {
     }
     // public
     init () {
+      this.setHtmlFontSize()
       this.inputListener()
       $('.btn-submit').on('click', () => {
         this.submit()
       })
+
+      if (window.addEventListener) {
+        window.addEventListener('resize', () => {
+          this.setHtmlFontSize()
+        }, false)
+      }
+    }
+    setHtmlFontSize () {
+      // 1366是设计稿的宽度，当大于1366时采用1366宽度，比例也是除以13.66
+      this.deviceWidth = document.documentElement.clientWidth > 1920 ? 1920 : document.documentElement.clientWidth
+      document.getElementsByTagName('html')[0].style.cssText = 'font-size:' + this.deviceWidth / 19.2 + 'px !important'
     }
     inputListener () { // 输入监听验证
       var input = $('.input__field')

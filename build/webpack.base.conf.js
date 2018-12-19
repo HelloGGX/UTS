@@ -10,8 +10,10 @@ const path = require('path')
 const webpack = require('webpack')
 
 const extractCss = new MiniCssExtractPlugin({
-  filename: 'css/[name]-bundle-[chunkHash:5].css',
-  chunkFilename: 'css/[name]-bundle-[chunkHash:5].css'
+  filename: 'css/[name]-bundle.css',
+  chunkFilename: 'css/[name]-bundle.css'
+  // filename: 'css/[name]-bundle-[chunkHash:5].css',
+  // chunkFilename: 'css/[name]-bundle-[chunkHash:5].css'
 })
 
 function resolve (dir) {
@@ -111,6 +113,15 @@ const generateConfig = (env) => {
       return obj
     }
   }
+  const external = (env) => {
+    if (env !== 'development') {
+      return {
+        // Swiper: 'Swiper',
+        // BMap: 'BMap',
+        jquery: 'jQuery'
+      }
+    }
+  }
 
   return {
     mode: env,
@@ -128,15 +139,14 @@ const generateConfig = (env) => {
         example: resolve('src/example')
       }
     },
-    externals: {
-      Swiper: 'Swiper',
-      BMap: 'BMap'
-    },
+    externals: external(env),
     output: {
       path: resolve('dist'),
-      filename: 'js/[name].[hash:5].js',
-      chunkFilename: 'js/[name].[chunkhash:5].js',
-      publicPath: env === 'production' ? './' : '',
+      filename: 'js/[name].bundle.js',
+      // filename: 'js/[name].[hash:5].js',
+      chunkFilename: 'js/[name].bundle.js',
+      // chunkFilename: 'js/[name].[chunkhash:5].js',
+      publicPath: env === 'production' ? './crm/dist' : '',
       libraryTarget: 'umd'
     },
     module: {
@@ -196,7 +206,9 @@ const generateConfig = (env) => {
       extractCss,
       new LodashModuleReplacementPlugin(),
       new webpack.ProvidePlugin({
-        $: 'jquery'
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
       })
     ]
   }

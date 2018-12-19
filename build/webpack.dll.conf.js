@@ -5,7 +5,7 @@ const webpack = require('webpack')
 module.exports = {
   mode: 'production',
   entry: {
-    libs: [ 'babel-polyfill', 'jquery' ]
+    libs: [ 'babel-polyfill' ]
   },
   output: {
     path: path.join(__dirname, '../src/dll'),

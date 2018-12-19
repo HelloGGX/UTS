@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%= require('html-loader!../../components/meta/meta.html')  %>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+
+</head>
+
+<body>
+    <div class="entry-form clearfix">
+        <div class="form-child">
+            <%= require('html-loader!../../components/input/input.html')  %>
+        </div> 
+    </div>
+
+</body>
+
+</html>
