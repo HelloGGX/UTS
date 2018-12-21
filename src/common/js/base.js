@@ -1,11 +1,16 @@
-import 'normalize.css'
+
 import 'common/css/index.less'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Input from 'components/input/input'
-
+import Popup from 'components/popup/popup'
+import DropDown from 'components/dropdown/dropdown'
 export {
-  Input
+  Popup,
+  Input,
+  DropDown
 }
+
 // var deviceWidth
 // setHtmlFontSize()
 

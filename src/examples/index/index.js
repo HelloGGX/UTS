@@ -1,7 +1,7 @@
 import './index.less'
 import 'common/css/button.less'
+import 'common/js/base'
 // import * as utils from 'vendor/utils'
-import $ from 'jquery'
 
 let Index = (function ($) {
   // const NAME = 'login'

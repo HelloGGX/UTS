@@ -15,6 +15,14 @@ const pages = [
   {
     title: 'CRM 表单',
     pageName: 'crm-form'
+  },
+  {
+    title: 'CRM 合同',
+    pageName: 'crm-contract'
+  },
+  {
+    title: '高级详情页',
+    pageName: 'detail'
   }
 ]
 const dependencies = [

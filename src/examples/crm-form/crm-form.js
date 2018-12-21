@@ -1,5 +1,5 @@
 import './crm-form.less'
-import $ from 'jquery'
+import 'common/js/base'
 
 const CrmForm = (function ($) {
   const VERSION = '1.0.0'
@@ -16,7 +16,30 @@ const CrmForm = (function ($) {
       return VERSION
     }
     init () {
-
+      $('.dropdown-single').dropdown({
+        readOnly: true,
+        input: '<input type="text" maxLength="20" placeholder="请输入搜索">',
+        choice: function () {
+          console.log(arguments, this)
+        }
+      })
+      $('.dropdown-mul').dropdown({
+        minCount: 2,
+        minCountErrorMessage: 'You need to select at least 2 options!',
+        limitCount: 4,
+        limitCountErrorMessage: 'You cannot select more than 4 options!',
+        searchable: false,
+        choice: function () {
+          console.log('.dropdown-mul-2 picked')
+        }
+      })
+      $('.dropdown-mul-group').dropdown({
+        limitCount: 40,
+        multipleMode: 'label',
+        choice: function () {
+          console.log(arguments, this)
+        }
+      })
     }
   }
   return CrmForm

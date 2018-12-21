@@ -9,9 +9,16 @@ const merge = require('webpack-merge')
 const path = require('path')
 const webpack = require('webpack')
 
-const extractCss = new MiniCssExtractPlugin({
-  filename: 'css/[name]-bundle.css',
-  chunkFilename: 'css/[name]-bundle.css'
+const chunkHash = (env) => {
+  if (env !== 'development') {
+    return 'chunkhash:5'
+  } else {
+    return 'hash:5'
+  }
+}
+const extractCss = (env) => new MiniCssExtractPlugin({
+  filename: `css/[name]-[contenthash].css`,
+  chunkFilename: `css/[name]-[${chunkHash(env)}].css`
   // filename: 'css/[name]-bundle-[chunkHash:5].css',
   // chunkFilename: 'css/[name]-bundle-[chunkHash:5].css'
 })
@@ -106,11 +113,11 @@ const generateConfig = (env) => {
   }
 
   const entry = (env) => {
-    let obj = { base: resolve('src/common/js/base.js') }
+    // let obj = { base: resolve('src/common/js/base.js') }
     if (env === 'development') {
-      return Object.assign(obj, { libs: globalConfig.dependencies })
+      return { libs: globalConfig.dependencies }
     } else {
-      return obj
+      return { }
     }
   }
   const external = (env) => {
@@ -136,16 +143,17 @@ const generateConfig = (env) => {
         components: resolve('src/components'),
         assets: resolve('src/assets'),
         vendor: resolve('src/vendor'),
-        example: resolve('src/example')
+        example: resolve('src/example'),
+        jquery: 'jquery/dist/jquery.min.js'
       }
     },
     externals: external(env),
     output: {
       path: resolve('dist'),
-      filename: 'js/[name].bundle.js',
+      filename: `js/[name].[${chunkHash(env)}].js`,
       // filename: 'js/[name].[hash:5].js',
-      chunkFilename: 'js/[name].bundle.js',
-      // chunkFilename: 'js/[name].[chunkhash:5].js',
+      // chunkFilename: 'js/[name].bundle.js',
+      chunkFilename: `js/[name].[${chunkHash(env)}].js`,
       publicPath: env === 'production' ? './crm/dist' : '',
       libraryTarget: 'umd'
     },
@@ -202,12 +210,33 @@ const generateConfig = (env) => {
         }
       ]
     },
+    optimization: {
+      // 跟commonChunkPlugin一个效果
+      splitChunks: {
+        chunks: 'all', // 对所有文件处理
+        automaticNameDelimiter: '-',
+        filename: 'js/base/[name].[chunkhash:5].js',
+        name: true,
+        // filename: 'js/libs/[name].[hash:5].js',
+        minChunks: Math.ceil(globalConfig.pages.length / 3), // 至少被1/3页面的引入才打入common包
+        cacheGroups: {
+          base: {
+            name: 'base',
+            priority: 1
+          }
+        }
+      },
+      runtimeChunk: {
+        name: 'manifest'
+      }
+    },
     plugins: [
-      extractCss,
+      extractCss(env),
       new LodashModuleReplacementPlugin(),
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
+        jquery: 'jQuery',
         'window.jQuery': 'jquery'
       })
     ]

@@ -1,5 +1,4 @@
 import './tab.less'
-import $ from 'jquery'
 import _ from 'lodash'
 
 const Tab = (function ($) {

@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-const globalConfig = require('./global.conf')
+// const globalConfig = require('./global.conf')
 const CleanWebpack = require('clean-webpack-plugin')
 const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
@@ -12,20 +12,7 @@ function resolve (dir) {
 }
 
 module.exports = {
-  optimization: {
-    // 跟commonChunkPlugin一个效果
-    splitChunks: {
-      chunks: 'all', // 对所有文件处理
-      automaticNameDelimiter: '-',
-      name: 'commons',
-      filename: 'js/libs/[name].bundle.js',
-      // filename: 'js/libs/[name].[hash:5].js',
-      minChunks: Math.ceil(globalConfig.pages.length / 3) // 至少被1/3页面的引入才打入common包
-    },
-    runtimeChunk: {
-      name: 'manifest'
-    }
-  },
+
   plugins: [
     new webpack.HashedModuleIdsPlugin(),
     new webpack.DllReferencePlugin({
@@ -53,7 +40,7 @@ module.exports = {
     //     ignore: [ '*.js' ]
     //   }
     // ]),
-    new CleanWebpack([ 'dist' ], {
+    new CleanWebpack(['dist'], {
       root: path.resolve(__dirname, '../'), // 根目录
       verbose: true, // 开启在控制台输出信息
       dry: false // 启用删除文件

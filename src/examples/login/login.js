@@ -1,6 +1,6 @@
 // import * as utils from 'vendor/utils'
-import $ from 'jquery'
 import './login.less'
+import 'common/js/base'
 import 'components/slider/slider'
 import { vali } from 'vendor/validate'
 import _ from 'lodash'

@@ -1,4 +1,3 @@
-import $ from 'jquery'
 import './slider.less'
 
 let Slider = (function ($) {

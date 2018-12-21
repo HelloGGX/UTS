@@ -184,6 +184,10 @@ input[type=checkbox],input[type=radio] {
 input[type=date],input[type=datetime-local],input[type=month],input[type=time] {
 	-webkit-appearance:listbox
 }
+form input[type=checkbox], form input[type=radio] {
+    width: 14px;
+    height: 14px;
+}
 textarea {
 	overflow:auto;
 	resize:vertical
@@ -280,6 +284,25 @@ mark {
 cite {
     font-style: normal;
 }
+.uts-layout{display:flex;flex-direction:column;flex:auto;background:#f0f2f5;min-height:0}
+.uts-layout,.uts-layout *{box-sizing:border-box}
+.uts-layout.uts-layout-has-sider{flex-direction:row}
+.uts-layout.uts-layout-has-sider>.uts-layout,.uts-layout.uts-layout-has-sider>.uts-layout-content{overflow-x:hidden}
+.uts-layout-footer,.uts-layout-header{flex:0 0 auto}
+.uts-layout-header{background:#001529;padding:0;height:64px;line-height:64px}
+.uts-layout-footer{background:#f0f2f5;padding:24px 50px;color:rgba(0,0,0,.65);font-size:14px}
+.uts-layout-content{flex:auto;min-height:0}
+.uts-layout-sider{transition:all .2s;position:relative;background:#001529;min-width:0}
+.uts-layout-sider-children{height:100%;padding-top:.1px;margin-top:-.1px}
+.uts-layout-sider-has-trigger{padding-bottom:48px}
+.uts-layout-sider-right{order:1}
+.uts-layout-sider-trigger{position:fixed;text-align:center;bottom:0;cursor:pointer;height:48px;line-height:48px;color:#fff;background:#002140;z-index:1;transition:all .2s}
+.uts-layout-sider-zero-width>*{overflow:hidden}
+.uts-layout-sider-zero-width-trigger{position:absolute;top:64px;right:-36px;text-align:center;width:36px;height:42px;line-height:42px;background:#001529;color:#fff;font-size:18px;border-radius:0 4px 4px 0;cursor:pointer;transition:background .3s ease}
+.uts-layout-sider-zero-width-trigger:hover{background:#192c3e}
+.uts-layout-sider-light{background:#fff}
+.uts-layout-sider-light .uts-layout-sider-trigger{color:rgba(0,0,0,.65);background:#fff}
+.uts-layout-sider-light .uts-layout-sider-zero-width-trigger{color:rgba(0,0,0,.65);background:#fff}
 .uts-bg-red{background-color:#FF5722!important;color:#fff!important}
 .uts-bg-orange{background-color:#FFB800!important;color:#fff!important}
 .uts-bg-green{background-color:#009688!important;color:#fff!important}

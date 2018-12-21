@@ -1,6 +1,5 @@
 import './sider-left.less'
 import { editOpts, debounce, Observer } from 'vendor/utils'
-import $ from 'jquery'
 
 /** **********js模板写法享元模式************ */
 var sider = (function ($) { // 侧边栏函数
@@ -39,7 +38,7 @@ var sider = (function ($) { // 侧边栏函数
       offsetWid > 992 ? this.lgWeb() : this.msWeb()
     },
     msWeb: function () { // 小屏幕
-      $('.uts-pro-components-sider').css({
+      $('.uts-components-sider').css({
         'flex': '0 0 80px',
         'maxWidth': '80px',
         'minWidth': '80px',
@@ -50,7 +49,7 @@ var sider = (function ($) { // 侧边栏函数
       return 80
     },
     lgWeb: function () { // 大屏幕
-      $('.uts-pro-components-sider').css({
+      $('.uts-components-sider').css({
         'flex': '0 0 256px',
         'maxWidth': '256px',
         'minWidth': '256px',

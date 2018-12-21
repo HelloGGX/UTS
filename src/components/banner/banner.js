@@ -1,7 +1,5 @@
 import './banner.less'
-import $ from 'jquery'
 import { debounce, Observer } from 'vendor/utils'
-import { dropdown } from 'components/drop-down/drop-down'
 
 const Banner = (function ($) {
   class Banner {
@@ -16,7 +14,7 @@ const Banner = (function ($) {
       $(window).on('resize', () => {
         debounce(this._setLeft(), 150)
       })
-      dropdown().init()
+
       this.siderTrigger()
     }
     siderTrigger () {

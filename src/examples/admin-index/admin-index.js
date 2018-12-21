@@ -1,4 +1,5 @@
 import './admin-index.less'
+import 'common/js/base'
 import sider from 'components/sider-left/sider-left'
 import { banner } from 'components/banner/banner'
 import { tab } from 'components/tab/tab'
