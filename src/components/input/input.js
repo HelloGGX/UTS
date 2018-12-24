@@ -11,7 +11,7 @@ const Input = (($) => {
 
   const NAME = 'input'
   const VERSION = '4.0.0'
-  const DATA_KEY = '.input'
+  const DATA_KEY = 'input'
   const EVENT_KEY = `.${DATA_KEY}`
   const DATA_API_KEY = '.data-api'
   const JQUERY_NO_CONFLICT = $.fn[NAME]
@@ -19,14 +19,17 @@ const Input = (($) => {
   const ClassName = {
     ACTIVE: 'checked',
     INPUT: 'input',
-    FOCUS: 'focus'
+    FOCUS: 'focus',
+    UP: 'uts-input-number-handler-up',
+    DOWN: 'uts-input-number-handler-down'
   }
 
   const Selector = {
     DATA_TOGGLE_CARROT: '[data-toggle^="input"]',
     DATA_TOGGLE: '[data-toggle="inputs"]',
-    INPUT: '.input', // input这个标签
-    ACTIVE: '.checked'
+    INPUT: 'input', // input这个标签
+    ACTIVE: '.checked',
+    HANDLER: '.uts-input-number-handler'
   }
 
   const Event = {
@@ -52,7 +55,6 @@ const Input = (($) => {
     static get VERSION () {
       return VERSION
     }
-
     // Public
     toggle () {
       let triggerChangeEvent = true
@@ -62,35 +64,33 @@ const Input = (($) => {
       )[0]
 
       if (rootElement) {
-        const input = $(this._element).find('input')[0]
-        const span = $(this._element).find('span')[0]
+        const input = $(this._element).find(Selector.INPUT)[0]
+        // const span = $(this._element).find('span')[0]
         const activeElement = $(rootElement).find(Selector.ACTIVE)[0]
 
         if (input) {
           if (input.type === 'radio') { // 如果是单选
-            if (input.checked &&
-              $(span).hasClass(ClassName.ACTIVE)) {
+            if ($(this._element).hasClass(ClassName.ACTIVE)) {
               triggerChangeEvent = false
             } else {
-              $(span).addClass(ClassName.ACTIVE)
-              $(input).attr('checked', true)
+              $(this._element).addClass(ClassName.ACTIVE)
               if (activeElement) {
                 $(activeElement).removeClass(ClassName.ACTIVE)
-                $(activeElement).find('input').attr('checked', false)
+                $(activeElement).find('input').prop('checked', false)
               }
             }
           } else if (input.type === 'checkbox') {
-            if (input.checked &&
-              $(span).hasClass(ClassName.ACTIVE)) {
+            if ($(this._element).hasClass(ClassName.ACTIVE)) {
               triggerChangeEvent = false
 
-              $(span).removeClass(ClassName.ACTIVE)
-              $(input).attr('checked', false)
+              $(this._element).removeClass(ClassName.ACTIVE)
+              $(input).prop('checked', false)
             } else {
-              $(span).addClass(ClassName.ACTIVE)
-              $(input).attr('checked', true)
+              $(this._element).addClass(ClassName.ACTIVE)
+              $(input).prop('checked', true)
             }
           }
+
           if (triggerChangeEvent) {
             if (input.hasAttribute('disabled') ||
               rootElement.hasAttribute('disabled') ||
@@ -98,12 +98,52 @@ const Input = (($) => {
               $(rootElement).hasClass('disabled')) {
               return
             }
-            input.checked = !$(this._element).hasClass(ClassName.ACTIVE)
-            // console.log(input.checked)
+            // input.checked = !$(this._element).hasClass(ClassName.ACTIVE)
+
             $(input).trigger('change')
           }
           input.focus()
           // addAriaPressed = false
+        } else {
+          const numInput = $(rootElement).find(Selector.INPUT)[0]
+          const step = Number($(numInput).attr('step'))
+          const max = Number($(numInput).attr('max'))
+          const min = Number($(numInput).attr('min'))
+          let val = Number($(numInput).val())
+          $(numInput).on('input propertychange', function (e) {
+            _.debounce(function () {
+              if ($(e.target).val() >= max) {
+                $(e.target).val(max)
+                return false
+              } else if ($(e.target).val() < min) {
+                $(e.target).val(min)
+                return false
+              }
+            }, 220)()
+          })
+          if (isNaN(val)) {
+            $(numInput).val(0)
+          } else {
+            if ($(this._element).hasClass(ClassName.UP)) { // 如果按加号
+              if ($(numInput).val() >= max) {
+                $(numInput).val(max)
+                return false
+              } else if ($(numInput).val() < min) {
+                $(numInput).val(min)
+              } else {
+                $(numInput).val(val + step)
+              }
+            } else if ($(this._element).hasClass(ClassName.DOWN)) { // 如果按减号
+              if ($(numInput).val() <= min) {
+                $(numInput).val(min)
+                return false
+              } else if ($(numInput).val() > max) {
+                $(numInput).val(max)
+              } else {
+                $(numInput).val(val - step)
+              }
+            }
+          }
         }
       }
 
@@ -117,7 +157,7 @@ const Input = (($) => {
       // }
     }
 
-    dispose () {
+    dispose () { // 销毁元素
       $.removeData(this._element, DATA_KEY)
       this._element = null
     }
@@ -185,9 +225,10 @@ const Input = (($) => {
   $(document)
     .on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE_CARROT, (event) => {
       event.preventDefault()
+
       let input = event.target
       if (!$(input).hasClass(ClassName.INPUT)) {
-        input = $(input).closest(Selector.INPUT)
+        input = $(input).closest(`.${Selector.INPUT}`)
       }
 
       Input._jQueryInterface.call($(input), 'toggle')
@@ -206,7 +247,7 @@ const Input = (($) => {
         _.debounce(valitdateFn, 440)()
       }
     })
-    .on(Event.INPUT_DATA_API, Selector.INPUT, (event) => {
+    .on(Event.INPUT_DATA_API, Selector.DATA_TOGGLE_CARROT, (event) => {
       let input = event.target
       const valiType = $(input).attr('data-vali')
       const maxLen = $(input).attr('maxLength')

@@ -1,6 +1,7 @@
-<form action="" class="uts-form uts-form-horizontal uts-form-hide-required-mark container-fluid">
+<!--uts-form-hide-required-mark 隐藏必选项的*号-->
+<form action="" class="uts-form uts-form-hide-required-mark container-fluid">
     <div class="row uts-form-item">
-        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2 col-xl-4">
+        <div class="uts-form-item-label col-lg-2 col-md-2">
             <label for="title" class="uts-form-item-required" title=""><span>手机号</span></label>
         </div>
         <div class="uts-form-item-control-wrapper col-lg-10 col-md-10 col-sm-10 col-xl-8">
@@ -12,7 +13,7 @@
         </div>
     </div>
     <div class="row uts-form-item">
-        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2 col-xl-4">
+        <div class="uts-form-item-label col-lg-2 col-md-2">
             <label for="title" class="uts-form-item-required" title=""><span>身份证</span></label>
         </div>
         <div class="uts-form-item-control-wrapper col-lg-10 col-md-10 col-sm-10 col-xl-8">
@@ -24,7 +25,7 @@
         </div>
     </div>
     <div class="row uts-form-item">
-        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2 col-xl-4">
+        <div class="uts-form-item-label col-lg-2 col-md-2">
             <label for="title" class="uts-form-item-required" title=""><span>邮箱</span></label>
         </div>
         <div class="uts-form-item-control-wrapper col-lg-10 col-md-10 col-sm-10 col-xl-8">
@@ -36,24 +37,24 @@
         </div>
     </div>
     <div class="row uts-form-item">
-        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2 col-xl-4">
+        <div class="uts-form-item-label col-lg-2 col-md-2">
             <label for="title" class="uts-form-item-required" title=""><span>目标描述</span></label>
         </div>
         <div class="uts-form-item-control-wrapper col-lg-10 col-md-10 col-sm-10 col-xl-8">
             <div class="uts-form-item-control">
                 <span class="uts-form-item-children">
-                    <textarea placeholder="请输入你的阶段性工作目标" data-toggle="input" rows="4" class="uts-input input" maxlength="200">
-                        
-                    </textarea>
-                    <div class="count">
-                        <span value="">0/200</span>
-                    </div>
+                   <div class="uts-form-textarea">
+                        <textarea placeholder="请输入你的阶段性工作目标" data-toggle="input" data-vali="notnull" rows="4" class="uts-input input" maxlength="200"></textarea>
+                        <div class="count">
+                            <span value="">0/200</span>
+                        </div>
+                   </div>
                 </span>
             </div>
         </div>
     </div>
     <div class="row uts-form-item">
-        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2 col-xl-4">
+        <div class="uts-form-item-label col-lg-2 col-md-2">
             <label for="title" class="uts-form-item-required" title=""><span>单选框</span></label>
         </div>
         <div class="uts-form-item-control-wrapper col-lg-10 col-md-10 col-sm-10 col-xl-8">
@@ -62,15 +63,13 @@
                     <div style="text-align: left;">
                         <div class="uts-radio-group uts-radio-group-outline" data-toggle="inputs">
                             <label class="uts-radio-wrapper input" >
-                                <span class="uts-radio checked">
+                                <span class="uts-radio">
                                     <input type="radio" class="uts-radio-input" autocomplete="off" value="1" checked="">
                                     <span class="uts-radio-inner">
                                     </span>
                                 </span>
                                 <span>
-                                    <span>
-                                        公开
-                                    </span>
+                                    公开
                                 </span>
                             </label>
                             <label class="uts-radio-wrapper input">
@@ -80,9 +79,7 @@
                                     </span>
                                 </span>
                                 <span>
-                                    <span>
-                                        部分公开
-                                    </span>
+                                    部分公开
                                 </span>
                             </label>
                             <label class="uts-radio-wrapper input">
@@ -92,9 +89,7 @@
                                     </span>
                                 </span>
                                 <span>
-                                    <span>
-                                        不公开
-                                    </span>
+                                    不公开
                                 </span>
                             </label>
                         </div>
@@ -104,7 +99,7 @@
         </div>
     </div>
     <div class="row uts-form-item">
-        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2 col-xl-4">
+        <div class="uts-form-item-label col-lg-2 col-md-2">
             <label for="title" class="uts-form-item-required" title=""><span>多选框</span></label>
         </div>
         <div class="uts-form-item-control-wrapper col-lg-10 col-md-10 col-sm-10 col-xl-8">
@@ -113,7 +108,7 @@
                     <div style="text-align: left;">
                         <div class="uts-checkbox-group" data-toggle="inputs">
                             <label class="uts-checkbox-wrapper input">
-                                <span class="uts-checkbox checked">
+                                <span class="uts-checkbox">
                                     <input type="checkbox" class="uts-checkbox-input" autocomplete="off" value="1">
                                     <span class="uts-checkbox-inner">
                                     </span>
@@ -155,16 +150,15 @@
         </div>
     </div>
     <div class="row uts-form-item">
-        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2 col-xl-4">
+        <div class="uts-form-item-label col-lg-2 col-md-2">
             <label for="title" class="uts-form-item-required" title=""><span>数字选择框</span></label>
         </div>
         <div class="uts-form-item-control-wrapper col-lg-10 col-md-10 col-sm-10 col-xl-8">
             <div class="uts-form-item-control">
                 <span class="uts-form-item-children">
-                <div class="uts-input-number">
+                <div class="uts-input-number" data-toggle="inputs">
                     <div class="uts-input-number-handler-wrap">
-                        <span unselectable="unselectable" role="button" aria-label="Increase Value"
-                            aria-disabled="false" class="uts-input-number-handler uts-input-number-handler-up ">
+                        <span role="button" aria-label="Increase Value" aria-disabled="false" class="uts-input-number-handler uts-input-number-handler-up input">
                             <i class="utsicon utsicon-up uts-input-number-handler-up-inner">
                                 <svg
                                     viewBox="64 64 896 896" class="" data-icon="up" width="1em" height="1em" fill="currentColor"
@@ -173,7 +167,7 @@
                                 </svg>
                             </i>
                         </span>
-                        <span unselectable="unselectable" role="button" aria-label="Decrease Value" aria-disabled="false" class="uts-input-number-handler uts-input-number-handler-down ">
+                        <span role="button" aria-label="Decrease Value" aria-disabled="false" class="uts-input-number-handler uts-input-number-handler-down input">
                             <i class="utsicon utsicon-down uts-input-number-handler-down-inner"><svg
                                     viewBox="64 64 896 896" class="" data-icon="down" width="1em" height="1em" fill="currentColor"
                                     aria-hidden="true">
@@ -183,7 +177,7 @@
                         </span>
                     </div>
                     <div class="uts-input-number-input-wrap" role="spinbutton" aria-valuemin="0" aria-valuemax="100">
-                        <input placeholder="请输入" class="uts-input-number-input" autocomplete="off" max="100" min="0" step="1">
+                        <input placeholder="请输入" type="number" class="uts-input-number-input input" data-vali="number,notnull" autocomplete="off" max="10" min="0" step="2">
                     </div>
                 </div>
                 <span class="ant-form-text">%</span>
@@ -192,7 +186,7 @@
         </div>
     </div>
     <div class="row uts-form-item">
-        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2 col-xl-4">
+        <div class="uts-form-item-label col-lg-2 col-md-2">
             <label for="title" class="uts-form-item-required" title=""><span>下拉单选</span></label>
         </div>
         <div class="uts-form-item-control-wrapper col-lg-10 col-md-10 col-sm-10 col-xl-8">
@@ -214,7 +208,7 @@
         </div>
     </div>
     <div class="row uts-form-item">
-        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2 col-xl-4">
+        <div class="uts-form-item-label col-lg-2 col-md-2">
             <label for="title" class="uts-form-item-required" title=""><span>下拉多选</span></label>
         </div>
         <div class="uts-form-item-control-wrapper col-lg-10 col-md-10 col-sm-10 col-xl-8">
@@ -236,7 +230,7 @@
         </div>
     </div>
     <div class="row uts-form-item">
-        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2 col-xl-4">
+        <div class="uts-form-item-label col-lg-2 col-md-2">
             <label for="title" class="uts-form-item-required" title=""><span>下拉多选分组</span></label>
         </div>
         <div class="uts-form-item-control-wrapper col-lg-10 col-md-10 col-sm-10 col-xl-8">

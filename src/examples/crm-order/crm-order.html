@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%= require('html-loader!../../components/meta/meta.html')  %>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="uts-components-pageHeader">
+            <div class="uts-components-breadcrumb uts-breadcrumb">
+                <span>
+                    <span class="uts-breadcrumb-link">
+                        <a href="/">
+                            <span>
+                                首页
+                            </span>
+                        </a>
+                    </span>
+                    <span class="uts-breadcrumb-separator">
+                        /
+                    </span>
+                </span>
+                <span>
+                    <span class="uts-breadcrumb-link">
+                        <span to="/profile">
+                            <span>
+                                合同管理
+                            </span>
+                        </span>
+                    </span>
+                    <span class="uts-breadcrumb-separator">
+                        /
+                    </span>
+                </span>
+                <span>
+                    <span class="uts-breadcrumb-link">
+                        <span to="/profile/advanced">
+                            <span>
+                                电子合同
+                            </span>
+                        </span>
+                    </span>
+                    <span class="uts-breadcrumb-separator">
+                        /
+                    </span>
+                </span>
+                <span>
+                    <span class="uts-breadcrumb-link">
+                        <span to="/profile/advanced">
+                            <span>
+                                生成订单
+                            </span>
+                        </span>
+                    </span>
+                    <span class="uts-breadcrumb-separator">
+                        /
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="uts-components-page-header-wrapper-index-content">
+            <div class="uts-components-page-header-wrapper-grid-content-main">
+                <div class="uts-card uts-card-wider-padding uts-card-padding-transition" style="margin-bottom: 24px;">
+                    <div class="uts-card-head">
+                        <div class="uts-card-head-wrapper">
+                            <div class="uts-card-head-title">终端信息</div>
+                        </div>
+                    </div>
+                    <div class="uts-card-body">
+                        <form action="post" class="uts-form container-fluid">
+                            <div class="uts-components-description-list-index-descriptionList" style="margin-bottom: 164px;">
+                                <div class="" style="margin-left: -16px; margin-right: -16px;">
+                                    <div class="col-xs-12 col-sm-6 col-md-4" style="padding-left: 16px; padding-right: 16px;">
+                                        <div class="uts-components-description-list-index-term">供应商单位</div>
+                                        <div class="uts-components-description-list-index-detail">付小小</div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-8" style="padding-left: 16px; padding-right: 16px;">
+                                        <div class="uts-components-description-list-index-term">供应商名称</div>
+                                        <div class="uts-components-description-list-index-detail">32943898021309809423</div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4" style="padding-left: 16px; padding-right: 16px;">
+                                        <div class="uts-components-description-list-index-term">联系人</div>
+                                        <div class="uts-components-description-list-index-detail">习近平</div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4" style="padding-left: 16px; padding-right: 16px;">
+                                        <div class="uts-components-description-list-index-term">联系方式</div>
+                                        <div class="uts-components-description-list-index-detail">18112345678</div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4" style="padding-left: 16px; padding-right: 16px;">
+                                        <div class="uts-components-description-list-index-term">QQ</div>
+                                        <div class="uts-components-description-list-index-detail">15668899965</div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4" style="padding-left: 16px; padding-right: 16px;">
+                                        <div class="uts-components-description-list-index-term">产品名称</div>
+                                        <div class="uts-components-description-list-index-detail">芭莎轻奢自由行</div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4" style="padding-left: 16px; padding-right: 16px;">
+                                        <div class="uts-components-description-list-index-term">天数</div>
+                                        <div class="uts-components-description-list-index-detail">10天</div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4" style="padding-left: 16px; padding-right: 16px;">
+                                        <div class="uts-components-description-list-index-term">出团日期</div>
+                                        <div class="uts-components-description-list-index-detail">2018-10-15</div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4" style="padding-left: 16px; padding-right: 16px;">
+                                        <div class="uts-components-description-list-index-term">参团人数:成人</div>
+                                        <div class="uts-components-description-list-index-detail">12</div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4" style="padding-left: 16px; padding-right: 16px;">
+                                        <div class="uts-components-description-list-index-term">参团人数:儿童</div>
+                                        <div class="uts-components-description-list-index-detail">12</div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4" style="padding-left: 16px; padding-right: 16px;">
+                                        <div class="uts-components-description-list-index-term">全陪</div>
+                                        <div class="uts-components-description-list-index-detail">12</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uts-card uts-card-bordered uts-card-wider-padding uts-card-padding-transition uts-card-type-inner">
+                                <div class="uts-card-head">
+                                    <div class="uts-card-head-wrapper">
+                                        <div class="uts-card-head-title">游客名单 (请认真填写准确的游客名单)</div>
+                                    </div>
+                                </div>
+                                <div class="uts-card-body">
+                                    
+                                </div>
+                            </div>
+                            <div class="uts-card uts-card-bordered uts-card-wider-padding uts-card-padding-transition uts-card-type-inner">
+                                <div class="uts-card-head">
+                                    <div class="uts-card-head-wrapper">
+                                        <div class="uts-card-head-title">结算价格 （请至少保留一个价格项）</div>
+                                    </div>
+                                </div>
+                                <div class="uts-card-body">
+                                    <div class="row uts-form-item">
+                                        <div class="uts-form-item-label col-lg-1 col-md-1 col-sm-1">
+                                            <label for="title" class="uts-form-item-required" title=""><span>价格类型</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-1 col-md-1 col-sm-1">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    成人
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="uts-form-item-label col-lg-1 col-md-1">
+                                            <label for="title" class="uts-form-item-required" title=""><span>结算价格</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-2 col-md-2 col-sm-2">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    <input placeholder="请输入结算价格"  data-toggle="input" data-vali="number,notnull" class="uts-input input" value="">
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="uts-form-item-label col-lg-1 col-md-1">
+                                            <label for="title" class="uts-form-item-required" title=""><span>收客价格</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-2 col-md-2 col-sm-2">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    <input placeholder="请输入收客价格" data-toggle="input" data-vali="number,notnull" class="uts-input input" value="">
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="uts-form-item-label col-lg-1 col-md-1">
+                                            <label for="title" class="uts-form-item-required" title=""><span>数量</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-2 col-md-2 col-sm-2">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    <div class="uts-input-number" data-toggle="inputs">
+                                                        <div class="uts-input-number-handler-wrap">
+                                                            <span role="button" aria-label="Increase Value" aria-disabled="false" class="uts-input-number-handler uts-input-number-handler-up input">
+                                                                <i class="utsicon utsicon-up uts-input-number-handler-up-inner">
+                                                                    <svg viewBox="64 64 896 896" class="" data-icon="up" width="1em" height="1em" fill="currentColor"
+                                                                        aria-hidden="true">
+                                                                        <path d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 0 0 140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"></path>
+                                                                    </svg>
+                                                                </i>
+                                                            </span>
+                                                            <span role="button" aria-label="Decrease Value" aria-disabled="false" class="uts-input-number-handler uts-input-number-handler-down input">
+                                                                <i class="utsicon utsicon-down uts-input-number-handler-down-inner"><svg viewBox="64 64 896 896" class=""
+                                                                        data-icon="down" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                                                        <path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path>
+                                                                    </svg>
+                                                                </i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="uts-input-number-input-wrap" role="spinbutton" aria-valuemin="0" aria-valuemax="100">
+                                                            <input placeholder="请输入" type="number" class="uts-input-number-input input" data-vali="number,notnull"
+                                                                autocomplete="off" max="10" min="0" step="2">
+                                                        </div>
+                                                    </div>
+                                                    <span class="ant-form-text">人</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row uts-form-item">
+                                        <div class="uts-form-item-label col-lg-1 col-md-1 col-sm-1">
+                                            <label for="title" class="uts-form-item-required" title=""><span>价格类型</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-1 col-md-1 col-sm-1">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    儿童
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="uts-form-item-label col-lg-1 col-md-1">
+                                            <label for="title" class="uts-form-item-required" title=""><span>结算价格</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-2 col-md-2 col-sm-2">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    <input placeholder="请输入结算价格" data-toggle="input" data-vali="number,notnull" class="uts-input input"
+                                                        value="">
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="uts-form-item-label col-lg-1 col-md-1">
+                                            <label for="title" class="uts-form-item-required" title=""><span>收客价格</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-2 col-md-2 col-sm-2">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    <input placeholder="请输入收客价格" data-toggle="input" data-vali="number,notnull" class="uts-input input"
+                                                        value="">
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="uts-form-item-label col-lg-1 col-md-1">
+                                            <label for="title" class="uts-form-item-required" title=""><span>数量</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-2 col-md-2 col-sm-2">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    <div class="uts-input-number" data-toggle="inputs">
+                                                        <div class="uts-input-number-handler-wrap">
+                                                            <span role="button" aria-label="Increase Value" aria-disabled="false" class="uts-input-number-handler uts-input-number-handler-up input">
+                                                                <i class="utsicon utsicon-up uts-input-number-handler-up-inner">
+                                                                    <svg viewBox="64 64 896 896" class="" data-icon="up" width="1em" height="1em" fill="currentColor"
+                                                                        aria-hidden="true">
+                                                                        <path d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 0 0 140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"></path>
+                                                                    </svg>
+                                                                </i>
+                                                            </span>
+                                                            <span role="button" aria-label="Decrease Value" aria-disabled="false" class="uts-input-number-handler uts-input-number-handler-down input">
+                                                                <i class="utsicon utsicon-down uts-input-number-handler-down-inner"><svg viewBox="64 64 896 896"
+                                                                        class="" data-icon="down" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                                                        <path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path>
+                                                                    </svg>
+                                                                </i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="uts-input-number-input-wrap" role="spinbutton" aria-valuemin="0" aria-valuemax="100">
+                                                            <input placeholder="请输入" type="number" class="uts-input-number-input input" data-vali="number,notnull" autocomplete="off" max="10" min="0" step="2">
+                                                        </div>
+                                                    </div>
+                                                    <span class="ant-form-text">人</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row uts-form-item">
+                                        <div class="uts-form-item-label col-lg-1 col-md-1 col-sm-1">
+                                            <label for="title" title=""><span>结算合计</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-1 col-md-1 col-sm-1">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    1000
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
+                                            <label for="title" title=""><span>合同销售合计</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-1 col-md-1 col-sm-1">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    1000
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
+                                            <label for="title" title=""><span>收客金额合计</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-1 col-md-1 col-sm-1">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    1000
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="uts-form-item-label col-lg-1 col-md-1 col-sm-1">
+                                            <label for="title" title=""><span>毛利合计</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-1 col-md-1 col-sm-1">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    1000
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uts-card uts-card-bordered uts-card-wider-padding uts-card-padding-transition uts-card-type-inner">
+                                <div class="uts-card-head">
+                                    <div class="uts-card-head-wrapper">
+                                        <div class="uts-card-head-title">团款结算</div>
+                                    </div>
+                                </div>
+                                <div class="uts-card-body">
+                                    <div class="row uts-form-item">
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
+                                            <label for="title" title=""><span>订金支付类型</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-2 col-md-2 col-sm-2">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    <div class="dropdown-single-dj">
+                                                        <select style="display:none" placeholder="请选择：测试placeholder">
+                                                            <option value="线下已转订金">线下已转订金</option>
+                                                            <option value="下单即扣订金">下单即扣订金</option>
+                                                            <option value="系统扣除订金">系统扣除订金</option>
+                                                        </select>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
+                                            <label for="title" class="uts-form-item-required" title=""><span>已付专线定金</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-2 col-md-2 col-sm-2">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    <div class="uts-input-number" data-toggle="inputs">
+                                                        <div class="uts-input-number-handler-wrap">
+                                                            <span role="button" aria-label="Increase Value" aria-disabled="false" class="uts-input-number-handler uts-input-number-handler-up input">
+                                                                <i class="utsicon utsicon-up uts-input-number-handler-up-inner">
+                                                                    <svg viewBox="64 64 896 896" class="" data-icon="up" width="1em" height="1em" fill="currentColor"
+                                                                        aria-hidden="true">
+                                                                        <path d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 0 0 140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"></path>
+                                                                    </svg>
+                                                                </i>
+                                                            </span>
+                                                            <span role="button" aria-label="Decrease Value" aria-disabled="false" class="uts-input-number-handler uts-input-number-handler-down input">
+                                                                <i class="utsicon utsicon-down uts-input-number-handler-down-inner"><svg viewBox="64 64 896 896" class=""
+                                                                        data-icon="down" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                                                        <path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path>
+                                                                    </svg>
+                                                                </i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="uts-input-number-input-wrap" role="spinbutton" aria-valuemin="0" aria-valuemax="100">
+                                                            <input placeholder="请输入" type="number" class="uts-input-number-input input" data-vali="number,notnull"
+                                                                autocomplete="off" max="10" min="0" step="2">
+                                                        </div>
+                                                    </div>
+                                                    <span class="ant-form-text">元</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="uts-form-item-label col-lg-1 col-md-1 col-sm-1">
+                                            <label for="title" class="uts-form-item-required" title=""><span>付款人</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-2 col-md-2 col-sm-2">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    <input placeholder="请输入付款人姓名" data-toggle="input" data-vali="special,notnull" type="text" class="uts-input input" value="">
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row uts-form-item">
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
+                                            <label for="title" class="uts-form-item-required" title=""><span>付款时间</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-2 col-md-2 col-sm-2">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    <input placeholder="请选择日期" type="text" class="uts-input input" value="">
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="uts-form-item-label col-lg-1 col-md-1 col-sm-1">
+                                            <label for="title" class="uts-form-item-required" title=""><span>付款银行</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-2 col-md-2 col-sm-2">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    <input placeholder="请输入银行名称" data-toggle="input" data-vali="notnull" type="text" class="uts-input input" value="">
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
+                                            <label for="title" class="uts-form-item-required" title=""><span>约定付尾款时间</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-2 col-md-2 col-sm-2">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    <input placeholder="请选择日期" type="text" class="uts-input input">
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uts-card uts-card-bordered uts-card-wider-padding uts-card-padding-transition uts-card-type-inner">
+                                <div class="uts-card-head">
+                                    <div class="uts-card-head-wrapper">
+                                        <div class="uts-card-head-title">基本信息</div>
+                                    </div>
+                                </div>
+                                <div class="uts-card-body">
+                                   
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

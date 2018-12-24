@@ -1,10 +1,10 @@
-import './crm-contract.less'
+import './crm-order.less'
 import 'common/js/base'
 
-const CrmContract = (function () {
+const CrmOrder = (function () {
   const VERSION = '1.0.0'
 
-  class CrmContract {
+  class CrmOrder {
     // Getters
     // constructor ({ name = 'form' } = {}) {
     //   this.getName = () => {
@@ -16,7 +16,7 @@ const CrmContract = (function () {
       return VERSION
     }
     init () {
-      $('.dropdown-single-sex').dropdown({
+      $('.dropdown-single-dj').dropdown({
         readOnly: true,
         searchable: false,
         choice: function () {
@@ -25,11 +25,11 @@ const CrmContract = (function () {
       })
     }
   }
-  return CrmContract
+  return CrmOrder
 })()
 
-var crmcontract = new CrmContract()
+var crmorder = new CrmOrder()
 
 $(function () {
-  crmcontract.init()
+  crmorder.init()
 })

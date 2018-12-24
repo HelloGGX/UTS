@@ -215,7 +215,7 @@ const generateConfig = (env) => {
       splitChunks: {
         chunks: 'all', // 对所有文件处理
         automaticNameDelimiter: '-',
-        filename: 'js/base/[name].[chunkhash:5].js',
+        filename: 'js/[name].[chunkhash:5].js',
         name: true,
         // filename: 'js/libs/[name].[hash:5].js',
         minChunks: Math.ceil(globalConfig.pages.length / 3), // 至少被1/3页面的引入才打入common包

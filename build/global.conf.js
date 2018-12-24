@@ -23,6 +23,10 @@ const pages = [
   {
     title: '高级详情页',
     pageName: 'detail'
+  },
+  {
+    title: 'CRM订单',
+    pageName: 'crm-order'
   }
 ]
 const dependencies = [

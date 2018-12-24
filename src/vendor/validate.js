@@ -68,7 +68,7 @@ var InputStrategy = (function () {
     // 特殊字符验证
     special: function (value) {
       var patrn = /[`~!@#$%^&*()_\-+=<>?:"{}|,;'\\[\]·~！@#￥%……&*（）——\-+={}|《》？：“”【】、；‘’，。、]/im
-      return patrn.test(value) ? '' : '输入内容不能含有特殊字符'
+      return patrn.test(value) ? '输入内容不能含有特殊字符' : ''
     }
   }
   return {

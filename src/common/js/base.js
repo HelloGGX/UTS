@@ -2,14 +2,9 @@
 import 'common/css/index.less'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import Input from 'components/input/input'
-import Popup from 'components/popup/popup'
-import DropDown from 'components/dropdown/dropdown'
-export {
-  Popup,
-  Input,
-  DropDown
-}
+import 'components/input/input'
+import 'components/popup/popup'
+import 'components/dropdown/dropdown'
 
 // var deviceWidth
 // setHtmlFontSize()
