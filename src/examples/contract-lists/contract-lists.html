@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%= require('html-loader!../../components/meta/meta.html')  %>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="uts-filter-lists">
+            <div class="row">
+                <div class="uts-form-item-label col-lg-1 col-md-1 col-sm-1">
+                    <label for="title"  title=""><span>保险类型</span></label>
+                </div>
+                <div class="uts-form-item-control-wrapper col-lg-2 col-md-2 col-sm-2">
+                        <div class="uts-form-item-control">
+                            <span class="uts-form-item-children">
+                                <div class="dropdow-insurance-type">
+                                    <select style="display:none" placeholder="请选择保险类型">
+                                        <option value="一般旅游意外险">一般旅游意外险</option>
+                                        <option value="自驾游">自驾游</option>
+                                    </select>
+                                </div>
+                    
+                            </span>
+                        </div>
+                </div>
+                <div class="uts-form-item-label col-lg-1 col-md-1 col-sm-1">
+                    <label for="title" title=""><span>境内外</span></label>
+                </div>
+                <div class="uts-form-item-control-wrapper col-lg-2 col-md-2 col-sm-2">
+                    <div class="uts-form-item-control">
+                        <span class="uts-form-item-children">
+                            <div class="dropdow-trav-boundary">
+                                <select style="display:none" placeholder="请选择国内或者处境">
+                                    <option value="国内">国内</option>
+                                    <option value="处境">处境</option>
+                                </select>
+                            </div>
+                
+                        </span>
+                    </div>
+                </div>
+                <div class="uts-form-item-label col-lg-1 col-md-1 col-sm-1">
+                    <label for="title" title=""><span>出游类型</span></label>
+                </div>
+                <div class="uts-form-item-control-wrapper col-lg-2 col-md-2 col-sm-2">
+                    <div class="uts-form-item-control">
+                        <span class="uts-form-item-children">
+                            <div class="dropdow-trav-type">
+                                <select style="display:none" placeholder="请选择出游类型">
+                                    <option value="自由行">自由行</option>
+                                    <option value="常规">常规</option>
+                                </select>
+                            </div>
+                
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="uts-list uts-pages-list-projects-coverCardList uts-list-split uts-list-grid">
+            <div class="uts-spin-nested-loading">
+                <div class="uts-spin-container">
+                    <div class="uts-row row" style="margin-left: -12px; margin-right: -12px;">
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="uts-list-item">
+                                <div class="uts-list-item-content uts-list-item-content-single">
+                                    <div class="uts-card uts-pages-list-projects-card uts-card-bordered uts-card-hoverable">
+                                        <div class="uts-card-cover"><img alt="Alipay" src="<%= require('../../assets/imgs/bg/contract1.png')%>"></div>
+                                        <div class="uts-card-body">
+                                            <div class="uts-card-meta">
+                                                <div class="uts-card-meta-detail">
+                                                    <div class="uts-card-meta-title">国内自由行</div>
+                                                    <div class="uts-card-meta-description">
+                                                        <p>国内自由行方案1</p> 
+                                                        <p>意外身故和残疾保险金 100,000 ￥</p>
+                                                        <p>急性病身故保险金 20,000 ￥</p>
+                                                        <p>高原病身故和残疾保险金 50,000 ￥</p>
+                                                        <p>医疗费用补偿(给付比例80%，免赔额100元) 20,000 ￥</p>
+                                                        <p>高原病医疗费用补偿(给付比例80%，免赔额100元) 10,000 ￥</p>
+                                                        <p>身故遗体运返保险金、丧葬保险金 5,000 ￥</p>
+                                                        <p>收费标准: 1天 : 1.5 ，2天 : 2.25 ，3天 : 3 ，4天 : 4.5 ，5-7天 : 6 ，8-9天 : 9 ， 10-12天 : 12 ，12天以上 :每超出一天加收1.5元</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="uts-pages-list-projects-cardItemContent">
+                                                <span>一般旅游意外险</span>
+                                                
+                                                <button type="button" class="el-button el-button--primary el-button--small">选择</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="uts-list-item">
+                                <div class="uts-list-item-content uts-list-item-content-single">
+                                    <div class="uts-card uts-pages-list-projects-card uts-card-bordered uts-card-hoverable">
+                                        <div class="uts-card-cover"><img alt="Angular" src="<%= require('../../assets/imgs/bg/contract1.png')%>"></div>
+                                        <div class="uts-card-body">
+                                            <div class="uts-card-meta">
+                                                <div class="uts-card-meta-detail">
+                                                    <div class="uts-card-meta-title"><a>Angular</a></div>
+                                                    <div class="uts-card-meta-description">希望是一个好东西，也许是最好的，好东西是不会消亡的</div>
+                                                </div>
+                                            </div>
+                                            <div class="uts-pages-list-projects-cardItemContent">
+                                                <span>一般旅游意外险</span>
+                                                
+                                                <button type="button" class="el-button el-button--primary el-button--small">选择</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="uts-list-item">
+                                <div class="uts-list-item-content uts-list-item-content-single">
+                                    <div class="uts-card uts-pages-list-projects-card uts-card-bordered uts-card-hoverable">
+                                        <div class="uts-card-cover"><img alt="uts Design" src="https://gw.alipayobjects.com/zos/rmsportal/iXjVmWVHbCJAyqvDxdtx.png"></div>
+                                        <div class="uts-card-body">
+                                            <div class="uts-card-meta">
+                                                <div class="uts-card-meta-detail">
+                                                    <div class="uts-card-meta-title"><a>uts Design</a></div>
+                                                    <div class="uts-card-meta-description">生命就像一盒巧克力，结果往往出人意料</div>
+                                                </div>
+                                            </div>
+                                            <div class="uts-pages-list-projects-cardItemContent"><span>4 小时前</span>
+                                                <div class="uts-pages-list-projects-avatarList">
+                                                    <div class="uts-components-avatar-list-index-avatarList">
+                                                        <ul>
+                                                            <li class="uts-components-avatar-list-index-avatarItem uts-components-avatar-list-index-avatarItemMini"><span
+                                                                    class="uts-avatar uts-avatar-circle uts-avatar-image" style="cursor: pointer;"><img
+                                                                        src="https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png"></span></li>
+                                                            <li class="uts-components-avatar-list-index-avatarItem uts-components-avatar-list-index-avatarItemMini"><span
+                                                                    class="uts-avatar uts-avatar-circle uts-avatar-image" style="cursor: pointer;"><img
+                                                                        src="https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png"></span></li>
+                                                            <li class="uts-components-avatar-list-index-avatarItem uts-components-avatar-list-index-avatarItemMini"><span
+                                                                    class="uts-avatar uts-avatar-circle uts-avatar-image" style="cursor: pointer;"><img
+                                                                        src="https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png"></span></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="uts-list-item">
+                                <div class="uts-list-item-content uts-list-item-content-single">
+                                    <div class="uts-card uts-pages-list-projects-card uts-card-bordered uts-card-hoverable">
+                                        <div class="uts-card-cover"><img alt="uts Design Pro" src="https://gw.alipayobjects.com/zos/rmsportal/gLaIAoVWTtLbBWZNYEMg.png"></div>
+                                        <div class="uts-card-body">
+                                            <div class="uts-card-meta">
+                                                <div class="uts-card-meta-detail">
+                                                    <div class="uts-card-meta-title"><a>uts Design Pro</a></div>
+                                                    <div class="uts-card-meta-description">城镇中有那么多的酒馆，她却偏偏走进了我的酒馆</div>
+                                                </div>
+                                            </div>
+                                            <div class="uts-pages-list-projects-cardItemContent"><span>6 小时前</span>
+                                                <div class="uts-pages-list-projects-avatarList">
+                                                    <div class="uts-components-avatar-list-index-avatarList">
+                                                        <ul>
+                                                            <li class="uts-components-avatar-list-index-avatarItem uts-components-avatar-list-index-avatarItemMini"><span
+                                                                    class="uts-avatar uts-avatar-circle uts-avatar-image" style="cursor: pointer;"><img
+                                                                        src="https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png"></span></li>
+                                                            <li class="uts-components-avatar-list-index-avatarItem uts-components-avatar-list-index-avatarItemMini"><span
+                                                                    class="uts-avatar uts-avatar-circle uts-avatar-image" style="cursor: pointer;"><img
+                                                                        src="https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png"></span></li>
+                                                            <li class="uts-components-avatar-list-index-avatarItem uts-components-avatar-list-index-avatarItemMini"><span
+                                                                    class="uts-avatar uts-avatar-circle uts-avatar-image" style="cursor: pointer;"><img
+                                                                        src="https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png"></span></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

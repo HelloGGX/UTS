@@ -27,6 +27,14 @@ const pages = [
   {
     title: 'CRM订单',
     pageName: 'crm-order'
+  },
+  {
+    title: '合同列表',
+    pageName: 'contract-lists'
+  },
+  {
+    title: '添加旅游产品',
+    pageName: 'products-add'
   }
 ]
 const dependencies = [

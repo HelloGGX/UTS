@@ -1,7 +1,7 @@
 
 import 'common/css/index.less'
 import 'bootstrap/dist/css/bootstrap.min.css'
-
+import 'bootstrap/dist/js/bootstrap.min.js'
 import 'components/input/input'
 import 'components/popup/popup'
 import 'components/dropdown/dropdown'

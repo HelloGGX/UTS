@@ -59,7 +59,7 @@ const Tab = (function ($) {
         </li>`
     }
     contentTpl () {
-      return `<div id="content_${arguments[0].id}" class="uts-card">
+      return `<div id="content_${arguments[0].id}" class="uts-card" style="background:#f0f2f5">
         <div class="uts-card-body"></div>
       </div>`
     }

@@ -144,6 +144,7 @@ const Input = (($) => {
               }
             }
           }
+          numInput.focus()
         }
       }
 
@@ -187,17 +188,17 @@ const Input = (($) => {
       if (result.length === 0) { // 验证通过
         $(this).parent().addClass('valiPass')
         $(this).parent().removeClass('has-error')
-        if ($(this).next().length > 0) {
-          $(this).next().hide()
+        if ($(this).next('.input-error').length > 0) {
+          $(this).next('.input-error').hide()
         }
       } else {
         $(this).parent().addClass('has-error')
         $(this).parent().removeClass('valiPass')
-        if ($(this).next().length === 0) {
+        if ($(this).next('.input-error').length === 0) {
           $(this).after(Input._errorTpl(result))
         } else {
-          $(this).next().html(result)
-          $(this).next().show()
+          $(this).next('.input-error').html(result)
+          $(this).next('.input-error').show()
         }
       }
     }
@@ -235,16 +236,32 @@ const Input = (($) => {
     })
     .on(Event.FOCUS_BLUR_DATA_API, Selector.DATA_TOGGLE_CARROT, (event) => {
       const input = $(event.target).closest(Selector.INPUT)[0]
-      $(input).toggleClass(ClassName.FOCUS, /^focus(in)?$/.test(event.type))
-      const valiType = $(input).attr('data-vali')
-      let val = $(input).val()
-      let args = {
-        vali: valiType,
-        val: val
-      }
-      if (valiType) {
-        var valitdateFn = () => Input._validate.call($(input), args)
-        _.debounce(valitdateFn, 440)()
+      const textarea = event.target
+
+      if (input) {
+        $(input).toggleClass(ClassName.FOCUS, /^focus(in)?$/.test(event.type))
+        const valiType = $(input).attr('data-vali')
+        let val = $(input).val()
+        let args = {
+          vali: valiType,
+          val: val
+        }
+        if (valiType) {
+          let valitdateFn = () => Input._validate.call($(input), args)
+          _.debounce(valitdateFn, 440)()
+        }
+      } else if (event.target.tagName === 'TEXTAREA') {
+        $(textarea).toggleClass(ClassName.FOCUS, /^focus(in)?$/.test(event.type))
+        const valiType = $(textarea).attr('data-vali')
+        let val = $(textarea).val()
+        let args = {
+          vali: valiType,
+          val: val
+        }
+        if (valiType) {
+          let valitdateFn = () => Input._validate.call($(textarea), args)
+          _.debounce(valitdateFn, 440)()
+        }
       }
     })
     .on(Event.INPUT_DATA_API, Selector.DATA_TOGGLE_CARROT, (event) => {
@@ -260,7 +277,7 @@ const Input = (($) => {
         var valitdateFn = () => Input._validate.call($(input), args)
         _.debounce(valitdateFn, 440)()
       }
-      $(input).next('.count').find('span').html(`${val.length}/${maxLen}`)
+      $(input).nextAll('.count').find('span').html(`${val.length}/${maxLen}`)
     })
 
   /**

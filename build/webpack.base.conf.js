@@ -11,14 +11,15 @@ const webpack = require('webpack')
 
 const chunkHash = (env) => {
   if (env !== 'development') {
-    return 'chunkhash:5'
+    // return '[chunkhash:5]'
+    return 'bundle'
   } else {
-    return 'hash:5'
+    return '[hash:5]'
   }
 }
 const extractCss = (env) => new MiniCssExtractPlugin({
   filename: `css/[name]-[contenthash].css`,
-  chunkFilename: `css/[name]-[${chunkHash(env)}].css`
+  chunkFilename: `css/[name]-${chunkHash(env)}.css`
   // filename: 'css/[name]-bundle-[chunkHash:5].css',
   // chunkFilename: 'css/[name]-bundle-[chunkHash:5].css'
 })
@@ -69,7 +70,7 @@ const generateConfig = (env) => {
         {
           loader: 'file-loader',
           options: {
-            name: '[name]-[hash:5].[ext]',
+            name: `[name]-${chunkHash(env)}.[ext]`,
             publicPath: '../imgs',
             outputPath: path
           }
@@ -79,10 +80,10 @@ const generateConfig = (env) => {
         {
           loader: 'url-loader', // 带图片转base64功能
           options: {
-            name: '[name]-[hash:5].[ext]',
+            name: `[name]-${chunkHash(env)}.[ext]`,
             limit: 1600, // 1600=16kb
             outputPath: path,
-            publicPath: './imgs'
+            publicPath: './crm/dist/imgs'
           }
         }
       ]
@@ -93,7 +94,7 @@ const generateConfig = (env) => {
         {
           loader: 'file-loader',
           options: {
-            name: '[name]-[hash:5].[ext]',
+            name: `[name]-${chunkHash(env)}.[ext]`,
             publicPath: '../fonts',
             outputPath: url
           }
@@ -103,7 +104,7 @@ const generateConfig = (env) => {
         {
           loader: 'url-loader', // 带转base64功能
           options: {
-            name: '[name]-[hash:5].[ext]',
+            name: `[name]-${chunkHash(env)}.[ext]`,
             limit: 1600, // 1600=16kb
             publicPath: '../fonts',
             outputPath: url
@@ -150,10 +151,10 @@ const generateConfig = (env) => {
     externals: external(env),
     output: {
       path: resolve('dist'),
-      filename: `js/[name].[${chunkHash(env)}].js`,
+      filename: `js/[name].${chunkHash(env)}.js`,
       // filename: 'js/[name].[hash:5].js',
       // chunkFilename: 'js/[name].bundle.js',
-      chunkFilename: `js/[name].[${chunkHash(env)}].js`,
+      chunkFilename: `js/[name].${chunkHash(env)}.js`,
       publicPath: env === 'production' ? './crm/dist' : '',
       libraryTarget: 'umd'
     },
@@ -215,7 +216,7 @@ const generateConfig = (env) => {
       splitChunks: {
         chunks: 'all', // 对所有文件处理
         automaticNameDelimiter: '-',
-        filename: 'js/[name].[chunkhash:5].js',
+        filename: `js/[name].${chunkHash(env)}.js`,
         name: true,
         // filename: 'js/libs/[name].[hash:5].js',
         minChunks: Math.ceil(globalConfig.pages.length / 3), // 至少被1/3页面的引入才打入common包
