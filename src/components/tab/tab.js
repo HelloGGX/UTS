@@ -14,7 +14,7 @@ const Tab = (function ($) {
   const Selector = {
     DATA_TOGGLE: '[data-toggle="tabItem"]'
   }
-  var tabMap = [] // 储存tab的id
+  let tabMap = [] // 储存tab的id
   class Tab {
     constructor ({ callBack = () => { } } = {}) {
       this.callBack = callBack // 回调函数
@@ -117,7 +117,12 @@ const Tab = (function ($) {
       _.remove(tabMap, function (n) {
         return n === id
       })
+      $(`#content_${id}`).remove()
       $(element).remove()
+      let lastContent = $('.uts-wrapper-grid-content').children('.uts-card:last-child')
+      let lashTab = $('.uts-tab-title').children('li:last-child')
+      lastContent.show().siblings().hide()
+      lashTab.addClass('uts-tab-active').siblings().removeClass('uts-tab-active')
     }
     appendMove (el) {
       var titleWidth = $('#uts_title').width()
@@ -172,7 +177,7 @@ const Tab = (function ($) {
   }
 
   return Tab
-})($)
+})(window.jQuery)
 export function tab (opt) {
   return new Tab({
     callBack: opt.callBack

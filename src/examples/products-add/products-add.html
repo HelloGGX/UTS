@@ -62,7 +62,6 @@
                     </div>
                     <div class="uts-card-body">
                         <form action="post" class="uts-form container-fluid">
-                           
                             <div class="uts-card uts-card-bordered  uts-card-padding-transition uts-card-type-inner">
                                 <div class="uts-card-head">
                                     <div class="uts-card-head-wrapper">
@@ -71,7 +70,7 @@
                                 </div>
                                 <div class="uts-card-body">
                                     <div class="row uts-form-item">
-                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-lg-2 col-sm-2">
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
                                             <label for="title" class="uts-form-item-required" title=""><span>旅游产品名称</span></label>
                                         </div>
                                         <div class="uts-form-item-control-wrapper col-lg-6 col-md-6 col-sm-6">
@@ -83,10 +82,10 @@
                                         </div>
                                     </div>
                                     <div class="row uts-form-item">
-                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-lg-2 col-sm-2">
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
                                             <label for="title" class="uts-form-item-required" title=""><span>对应关键字</span></label>
                                         </div>
-                                        <div class="uts-form-item-control-wrapper col-lg-4 col-md-4 col-sm-4">
+                                        <div class="uts-form-item-control-wrapper col-lg-2 col-md-2 col-sm-2">
                                             <div class="uts-form-item-control">
                                                 <span class="uts-form-item-children">
                                                     <div class="dropdown-single">
@@ -102,17 +101,17 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-lg-2 col-sm-2">
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
                                             <label for="title" class="uts-form-item-required" title=""><span>目标零售终端</span></label>
                                         </div>
-                                        <div class="uts-form-item-control-wrapper col-lg-4 col-md-4 col-sm-4">
+                                        <div class="uts-form-item-control-wrapper col-lg-3 col-md-3 col-sm-3">
                                             <div class="uts-form-item-control">
                                                 <span class="uts-form-item-children">
                                                     <div style="text-align: left;">
                                                         <div class="uts-radio-group uts-radio-group-outline" data-toggle="inputs">
-                                                            <label class="uts-radio-wrapper input">
+                                                            <label class="uts-radio-wrapper input checked">
                                                                 <span class="uts-radio">
-                                                                    <input type="radio" class="uts-radio-input" autocomplete="off" value="所有门市" checked="">
+                                                                    <input name="store" type="radio" class="uts-radio-input" autocomplete="off" value="所有门市" checked="true">
                                                                     <span class="uts-radio-inner">
                                                                     </span>
                                                                 </span>
@@ -122,7 +121,7 @@
                                                             </label>
                                                             <label class="uts-radio-wrapper input">
                                                                 <span class="uts-radio">
-                                                                    <input type="radio" class="uts-radio-input" autocomplete="off" value="指定门市">
+                                                                    <input name="store" type="radio" class="uts-radio-input" autocomplete="off" value="指定门市">
                                                                     <span class="uts-radio-inner">
                                                                     </span>
                                                                 </span>
@@ -135,9 +134,46 @@
                                                 </span>
                                             </div>
                                         </div>
+                                        <div id="store" style="display:none" class="uts-form-item-control-wrapper col-lg-3 col-md-3 col-sm-3">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                <div class="dropdown-single-store">
+                                                    <select style="display:none" placeholder="请选择产品对应关键字">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">我是默认选中的</option>
+                                                        <option value="4" disabled>4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                    </select>
+                                                </div>
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="row uts-form-item">
-                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-lg-2 col-sm-2">
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
+                                            <label for="title" class="uts-form-item-required" title=""><span>二级关键字</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-4 col-md-4 col-sm-4">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    <div class="dropdown-single">
+                                                        <select style="display:none" placeholder="请选择二级关键字">
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">我是默认选中的</option>
+                                                            <option value="4" disabled>4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                        </select>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row uts-form-item">
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
                                             <label for="title" class="uts-form-item-required" title=""><span>交通类型</span></label>
                                         </div>
                                         <div class="uts-form-item-control-wrapper col-lg-4 col-md-4 col-sm-4">
@@ -157,7 +193,7 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-lg-2 col-sm-2">
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
                                             <label for="title" class="uts-form-item-required" title=""><span>出团时间</span></label>
                                         </div>
                                         <div class="uts-form-item-control-wrapper col-lg-4 col-md-4 col-sm-4">
@@ -169,7 +205,7 @@
                                         </div>
                                     </div>
                                     <div class="row uts-form-item">
-                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-lg-2 col-sm-2">
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
                                             <label for="title" class="uts-form-item-required" title=""><span>计划人数</span></label>
                                         </div>
                                         <div class="uts-form-item-control-wrapper col-lg-4 col-md-4 col-sm-4">
@@ -229,8 +265,27 @@
                                                                             </th>
                                                                         </tr>
                                                                     </thead>
-                                                                    <tbody class="uts-table-tbody">
-                                                                        
+                                                                    <tbody id="product-price" class="uts-table-tbody">
+                                                                        <tr class="uts-table-row uts-pages-forms-style-editable" id="NEW_TEMP_ID_1">
+                                                                            <td class="">
+                                                                                <span class="uts-table-row-indent" style="padding-left: 0px;"></span>
+                                                                                <input placeholder="价格类型" type="text" data-toggle="input" data-vali="special,notnull" class="uts-input input" readonly value="成人">
+                                                                            </td>
+                                                                            <td class="">
+                                                                                <input placeholder="结算价格" type="text" data-toggle="input" data-vali="number,notnull" class="uts-input input">
+                                                                            </td>
+                                                                            <td class=""><span><a>必填</a></span></td>
+                                                                        </tr>
+                                                                        <tr class="uts-table-row uts-pages-forms-style-editable" id="NEW_TEMP_ID_2">
+                                                                            <td class="">
+                                                                                <span class="uts-table-row-indent" style="padding-left: 0px;"></span>
+                                                                                <input placeholder="价格类型" type="text" data-toggle="input" data-vali="special,notnull" class="uts-input input" readonly value="儿童">
+                                                                            </td>
+                                                                            <td class="">
+                                                                                <input placeholder="结算价格" type="text" data-toggle="input" data-vali="number,notnull" class="uts-input input">
+                                                                            </td>
+                                                                            <td class=""><span><a>必填</a></span></td>
+                                                                        </tr>
                                                                     </tbody>
                                                                 </table>
                                                             </div>
@@ -328,7 +383,7 @@
                                         <div class="uts-form-item-label col-lg-1 col-md-1 col-sm-1">
                                             <label for="title" class="uts-form-item-required" title=""><span>提前</span></label>
                                         </div>
-                                        <div class="uts-form-item-control-wrapper col-lg-2 col-md-2 col-sm-2">
+                                        <div class="uts-form-item-control-wrapper col-lg-4 col-md-4 col-sm-4">
                                             <div class="uts-form-item-control">
                                                 <span class="uts-form-item-children">
                                                     <div class="uts-input-number" data-toggle="inputs">
@@ -361,7 +416,7 @@
                                         <div class="uts-form-item-label col-lg-1 col-md-1 col-sm-1">
                                             <label for="title" class="uts-form-item-required" title=""><span>手机号</span></label>
                                         </div>
-                                        <div class="uts-form-item-control-wrapper col-lg-5 col-md-5 col-sm-5">
+                                        <div class="uts-form-item-control-wrapper col-lg-3 col-md-3 col-sm-3">
                                             <div class="uts-form-item-control">
                                                 <span class="uts-form-item-children">
                                                     <input placeholder="门店下单后系统会给此手机发送短信" type="text" data-toggle="input" data-vali="phone,notnull" class="uts-input input">
@@ -377,7 +432,7 @@
                                 </div>
                                 <div class="uts-card-body">
                                     <div class="row uts-form-item">
-                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-lg-2 col-sm-2">
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
                                             <label for="title" class="uts-form-item-required" title=""><span>形程特色</span></label>
                                         </div>
                                         <div class="uts-form-item-control-wrapper col-lg-6 col-md-6 col-sm-6">
@@ -394,7 +449,7 @@
                                         </div>
                                     </div>
                                     <div class="row uts-form-item">
-                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-lg-2 col-sm-2">
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
                                             <label for="title" class="uts-form-item-required" title=""><span>上传主图</span></label>
                                         </div>
                                         <div class="uts-form-item-control-wrapper col-lg-10 col-md-10 col-sm-10">
@@ -406,7 +461,7 @@
                                         </div>
                                     </div>
                                     <div class="row uts-form-item">
-                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-lg-2 col-sm-2">
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
                                             <label for="title" class="uts-form-item-required" title=""><span>路线详情</span></label>
                                         </div>
                                         <div class="uts-form-item-control-wrapper col-lg-10 col-md-10 col-sm-10">
@@ -425,10 +480,10 @@
                                                                     <col>
                                                                     <col>
                                                                 </colgroup>
-                                                                <tbody class="uts-table-tbody">
+                                                                <tbody id="product-detail" class="uts-table-tbody">
                                                                     <tr class="row uts-table-expanded-row">
-                                                                        <td class="uts-table-title  col-lg-1 col-md-1 col-sm-1">
-                                                                            <span>第一天</span>
+                                                                        <td class="uts-table-title uts-table-detail-title  col-lg-1 col-md-1 col-sm-1">
+                                                                            <span>第1天</span>
                                                                         </td>
                                                                         <td class="col-lg-11 col-md-11 col-sm-11">
                                                                             <dl class="row">
@@ -452,17 +507,15 @@
                                                                             <dl class="row">
                                                                                 <dt class="col-lg-1 col-md-1 col-sm-1">用餐</dt>
                                                                                 <dd class="col-lg-5 col-md-5 col-sm-5">
-                                                                                    <div class="dropdown-single">
-                                                                                        <select style="display:none" placeholder="请选择用餐类型">
-                                                                                            <option value="早">早</option>
-                                                                                            <option value="早中晚">早中晚</option>
-                                                                                            <option value="早中">早中</option>
-                                                                                            <option value="早晚">早晚</option>
-                                                                                            <option value="中">中</option>
-                                                                                            <option value="中晚">中晚</option>
-                                                                                            <option value="晚">晚</option>
-                                                                                        </select>
-                                                                                    </div>
+                                                                                    <select placeholder="请选择用餐类型">
+                                                                                        <option value="早">早</option>
+                                                                                        <option value="早中晚">早中晚</option>
+                                                                                        <option value="早中">早中</option>
+                                                                                        <option value="早晚">早晚</option>
+                                                                                        <option value="中">中</option>
+                                                                                        <option value="中晚">中晚</option>
+                                                                                        <option value="晚">晚</option>
+                                                                                    </select>
                                                                                 </dd>
                                                                             </dl>
                                                                             <dl class="row">
@@ -477,6 +530,7 @@
                                                                                     </div>
                                                                                 </dd>
                                                                             </dl>
+                                                                           
                                                                         </td>
                                                                         
                                                                     </tr>
@@ -485,7 +539,7 @@
                                                             </table>
                                                         </div>
                                                     </div>
-                                                    <button type="button" id="add-detail" class="uts-btn uts-btn-dashed" style="width: 100%; margin-top: 16px; margin-bottom: 8px;">
+                                                    <button type="button" id="addDetail" class="uts-btn uts-btn-dashed" style="width: 100%; margin-top: 16px; margin-bottom: 8px;">
                                                         <i class="utsicon utsicon-plus">
                                                             <svg viewBox="64 64 896 896" class="" data-icon="plus" width="1em" height="1em" fill="currentColor" aria-hidden="true">
                                                                 <path d="M848 474H550V152h-76v322H176c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h298v322h76V550h298c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path>
@@ -498,12 +552,115 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row uts-form-item">
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
+                                            <label for="title" class="uts-form-item-required" title=""><span>购物点</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-10 col-md-10 col-sm-10">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    <div class="uts-form-textarea">
+                                                        <textarea placeholder="购物点明细，名称，停留时间" data-toggle="input" data-vali="notnull" rows="4" class="uts-input input"
+                                                            maxlength="2000"></textarea>
+                                                        <div class="count">
+                                                            <span value="">0/2000</span>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row uts-form-item">
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
+                                            <label for="title" class="uts-form-item-required" title=""><span>自费项目</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-10 col-md-10 col-sm-10">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    <div class="uts-form-textarea">
+                                                        <textarea placeholder="名称，价格，停留时间" data-toggle="input" data-vali="notnull" rows="4" class="uts-input input"
+                                                            maxlength="2000"></textarea>
+                                                        <div class="count">
+                                                            <span value="">0/2000</span>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uts-card-head">
+                                    <div class="uts-card-head-wrapper">
+                                        <div class="uts-card-head-title">费用包含与不包含</div>
+                                    </div>
+                                </div>
+                                <div class="uts-card-body">
+                                    <div class="row uts-form-item">
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
+                                            <label for="title" class="uts-form-item-required" title=""><span>费用包含</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-6 col-md-6 col-sm-6">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    <div class="uts-form-textarea">
+                                                        <textarea placeholder="请输入你的费用包含项" data-toggle="input" data-vali="notnull" rows="4" class="uts-input input"
+                                                            maxlength="2000"></textarea>
+                                                        <div class="count">
+                                                            <span value="">0/2000</span>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row uts-form-item">
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
+                                            <label for="title" class="uts-form-item-required" title=""><span>费用不包含</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-6 col-md-6 col-sm-6">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    <div class="uts-form-textarea">
+                                                        <textarea placeholder="请输入你的费用不包含项" data-toggle="input" data-vali="notnull" rows="4" class="uts-input input"
+                                                            maxlength="2000"></textarea>
+                                                        <div class="count">
+                                                            <span value="">0/2000</span>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row uts-form-item">
+                                        <div class="uts-form-item-label col-lg-2 col-md-2 col-sm-2">
+                                            <label for="title" class="uts-form-item-required" title=""><span>预订须知</span></label>
+                                        </div>
+                                        <div class="uts-form-item-control-wrapper col-lg-6 col-md-6 col-sm-6">
+                                            <div class="uts-form-item-control">
+                                                <span class="uts-form-item-children">
+                                                    <div class="uts-form-textarea">
+                                                        <textarea placeholder="请输入出行预订须知" data-toggle="input" data-vali="notnull" rows="4" class="uts-input input"
+                                                            maxlength="2000"></textarea>
+                                                        <div class="count">
+                                                            <span value="">0/2000</span>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            
                         </form>
                         <div class="uts-form-btn-submit">
-                            <button type="button" class="el-button el-button--primary"><span>下订单</span></button>
+                        <div class="uts-components-footer-toolbar-index-toolbar">
+                            <div class="uts-components-footer-toolbar-index-left"></div>
+                            <div class="uts-components-footer-toolbar-index-right">
+                                <button type="button" class="el-button el-button--primary el-button--medium">
+                                    <span>提交</span>
+                                </button>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>

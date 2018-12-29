@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import 'components/input/input'
 import 'components/popup/popup'
 import 'components/dropdown/dropdown'
+import 'components/canlendar/canlendar'
 
 // var deviceWidth
 // setHtmlFontSize()

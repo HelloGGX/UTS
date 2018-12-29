@@ -35,7 +35,7 @@ const Banner = (function ($) {
     }
   }
   return Banner
-})($)
+})(window.jQuery)
 
 export function banner (opt) {
   return new Banner({

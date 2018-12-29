@@ -2,3 +2,4 @@ src/dll/*.js
 node_modules
 libs
 dist
+vendor/swiper.min.js

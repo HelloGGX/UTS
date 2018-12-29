@@ -121,7 +121,7 @@ const Popup = (function ($) {
     return Popup._jQueryInterface
   }
   return Popup
-})($)
+})(window.jQuery)
 
 export default Popup
 

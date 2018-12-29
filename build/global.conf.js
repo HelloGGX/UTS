@@ -35,6 +35,10 @@ const pages = [
   {
     title: '添加旅游产品',
     pageName: 'products-add'
+  },
+  {
+    title: '旅游产品详情页',
+    pageName: 'products-detail'
   }
 ]
 const dependencies = [

@@ -1,0 +1,576 @@
+
+.wrapper {
+    height: auto;
+    font-family: "microsoft yahei";
+    width: 1210px;
+    margin: 0 auto;
+}
+.product_info {
+    width: 1128px;
+    border: 1px solid #DDD;
+    padding: 0px;
+    background-color: #FFF;
+    .product_name_bar {
+        line-height: 32px;
+        h1 {
+            font-size: 22px;
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+    .product_name_tips {
+        position: relative;
+        color: #AAA;
+        .book_infor {
+            display: inline;
+            float: none;
+        }
+    }
+}
+.content {
+    .product-info-name {
+        padding-bottom: 0;
+        border-bottom: 0 none;
+        position: relative;
+        .product_name_bar h1 {
+            padding-right: 40px;
+        }
+        .product-info-name .style_tour {
+            display: inline-block;
+            width: 39px;
+            height: 14px;
+            vertical-align: middle;
+            position: relative;
+            background: url(//ssl1.tuniucdn.com/img/201512142100/tour/tour_icon.png) 0 -18px no-repeat;
+        }
+    }
+    .product_outline {
+        margin-bottom: 20px;
+        border-top: 0 none;
+        padding-top: 10px;
+        padding-bottom: 30px;
+        .product_main_bar {
+            margin-top: 0;
+        }
+    }
+}
+.priduct_no {
+    color: #F80;
+}
+.product_img_box {
+    height: 340px;
+    overflow: hidden;
+    position: relative;
+}
+.product_left {
+    width: 500px;
+    float: left;
+    .product_img_box {
+        width: 500px;
+        height: 345px;
+         z-index: 9;
+        .view {
+            position: relative;
+            .carousel-container {
+               position: relative;
+                overflow: hidden;
+                width: 500px;
+                height: 280px;
+                .carousel-inner {
+                     height: 280px;
+                     position: relative;
+                     .item {
+                        width: 500px;
+                        height: 280px;
+                        position: relative;
+                        transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+                        img {
+                            width: 500px;
+                            
+                        }
+                     }
+                }
+            }
+        }
+        .preview {
+            position: relative;
+            height: auto;
+            width: 500px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            padding: 5px 0;
+            .preview-container {
+               
+                width: 100%;
+                height: 55px;
+                .preview-inner {
+                    float: left;
+                    transition: all 0.3s;
+                    &>.item {
+                        display: inline-block;
+                        margin: 0;
+                        position: relative;
+                        width: 99px;
+                        height: 55px;
+                        cursor: pointer;
+                        overflow: hidden;
+                        transition: all 0.3s;
+                        img {
+                            display: block;
+                            width: 100%;
+                            height: 55px;
+                            opacity: 0.7;
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                        &.active {
+                            width: 99px;
+                            border: 2px solid #ff541c;
+                            opacity: 1;
+                        }
+                    }
+                    &.carousel-indicators {
+                        position: relative;
+                        padding: 0;
+                        margin: 0;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
+.product_right {
+    width: 538px;
+    float: right;
+    vertical-align: top;
+    height: auto;
+    position: relative;
+    margin-right: 30px;
+    font-size: 12px;
+    dl dd,dl dt{
+        float: left;
+    }
+    .product_price_bar {
+        color: #999;
+        height: 98px;
+        position: relative;
+        width: 662px;
+        background: url(//img.tuniucdn.com/img/201602262051/boss3_driver/zjjia_hotel_bg.png) 0 0 no-repeat transparent;
+        left: -60px;
+    }
+    .product_price_bar_height {
+        background: url(//img.tuniucdn.com/img/201605051732/boss3_selfTour/zjjia_hotel_bg_1200.png) 0 0 no-repeat transparent;
+        height: 123px;
+        height: 71px;
+        background-position: 0 -51px;
+        position: relative;
+        .custom-badge-box {
+            position: absolute;
+            display: block;
+            right: 0;
+            top: 0;
+            width: 185px;
+            height: 100%;
+            overflow: hidden;
+            img {
+                max-width: 100%;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+    .letter-space {
+        letter-spacing: 4px;
+    }
+    .part-top {
+        margin-bottom: 15px;
+    }
+    .favour-wrapper {
+        overflow: hidden;
+        padding: 15px 0;
+        /* border-bottom: 1px dashed #ddd; */
+        padding-bottom: 0;
+        display: none;
+        .favour-title {
+            height: 26px;
+            line-height: 26px;
+            width: 66px;
+            float: left;
+            color: #666;
+        }
+        .favour-cont {
+            float: left;
+            text-align: left;
+            font-family: "Microsoft Yahei";
+            max-width: 100%;
+            .favour-item {
+                height: 26px;
+                line-height: 26px;
+                margin-bottom: 5px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                .favour-item-type {
+                    display: block;
+                    float: left;
+                    width: 18px;
+                    height: 18px;
+                    line-height: 16px;
+                    text-align: center;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    border: 1px solid #f80;
+                    font-size: 12px;
+                    position: relative;
+                    top: 4px;
+                    margin-right: 5px;
+                    color: #f80;
+                    -webkit-border-radius: 2px;
+                    -moz-border-radius: 2px;
+                    border-radius: 2px;
+                }
+                .favour-item-name {
+                    display: block;
+                    float: left;
+                    color: #333;
+                    margin-right: 0;
+                    position: relative;
+                    padding-right: 60px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-width: 440px;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    span {
+                        display: inline;
+                        color: #f80;
+                        cursor: pointer;
+                        margin-left: 5px;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                    }
+                }
+                &.favour-q .favour-item-name {
+                    padding-right: 50px;
+                }
+            }
+        }
+    }
+    .list-wrapper{
+        overflow: hidden;
+        padding: 0;
+        margin-bottom: 0;
+        margin-top: 15px;
+        .list-title {
+            height: 20px;
+            line-height: 20px;
+            width: 66px;
+            float: left;
+            color: #666;
+        }
+        .list-cont {
+            float: left;
+            text-align: left;
+            font-family: "Microsoft Yahei";
+            max-width: 100%;
+            width: 470px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .evaluate-wrapper {
+        border: 1px dashed #ddd;
+        border-width: 1px 0;
+        margin: 0;
+        padding: 10px 0;
+        position: relative;
+        overflow: hidden;
+        _zoom: 1;
+        clear: both;
+        display: flex;
+        .list-item {
+            float: left;
+            width: 33%;
+            text-align: center;
+            position: relative;
+            left: -1px;
+            border-left: 1px solid #e5dfda;
+            flex: 1;
+            line-height: 16px;
+            .evaluate-label {
+                display: inline-block;
+                line-height: 16px;
+                height: 16px;
+                color: #999;
+            }
+            .evaluate-count {
+                display: inline-block;
+                line-height: 16px;
+                height: 16px;
+                color: #333;
+                /* font-weight: 700; */
+                margin-left: 0;
+                a {
+                    color: #ff9419;
+                }
+            }
+            .evaluate-re .evaluate-count {
+                color: #ff9419;
+            }
+        }
+    }
+    .order_city_order {
+        background: #f3eeed;
+        width: 570px;
+        background: #fff;
+        /* border-top: 1px dashed #ddd; */
+        padding-left: 0;
+        margin-left: 0;
+        padding: 20px 0 0px 40px;
+        .city_package {
+            dt {
+                width: 66px;
+                color: #999;
+            }
+            .start_city {
+                color: #666;
+                height: 26px;
+                line-height: 26px;
+            }
+            .select_city {
+                position: relative;
+            }
+        }
+        dl.s_date {
+            padding: 10px 0 0;
+        }
+    }
+    ul.select_city li.city {
+        position: relative;
+        display: block;
+        float: left;
+        margin: 0 10px 0 0;
+        min-width: 60px;
+        height: 24px;
+        border: 1px solid #ddd;
+        line-height: 22px;
+        text-align: center;
+        cursor: pointer;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        color: #333;
+        width: 86px;
+        padding: 0 10px;
+        i {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 10px;
+            height: 11px;
+            font-size: 0;
+            line-height: 0;
+            background: url(//ssl1.tuniucdn.com/img/2014090316/zizhu0520/iconsprite.png) no-repeat right -27px;
+            overflow: hidden;
+        }
+         &.active{
+            border: 1px solid #ff9419;
+            i{
+                display: block;
+            }
+        }
+    }
+    .select_box.select_date {
+        position: relative;
+        z-index: 2;
+        background: #fff;
+        float: left;
+        margin-top: 2px;
+        z-index: 100;
+        .select_con {
+            height: 22px;
+            line-height: 22px;
+            border: 1px solid #ccc;
+            padding: 0 10px;
+            width: 448px;
+            background-position: 448px -50px;
+            &.active {
+                border-color: #f80;
+            }
+        }
+        .select_result {
+            line-height: 22px;
+            height: 22px;
+            width: 445px;
+        }
+        .select_list {
+            position: absolute;
+            top: 24px;
+            left: 0;
+            border: 1px solid #ccc;
+            border-top: 0 none;
+            background: #fff;
+            overflow-x: hidden;
+            overflow-y: auto;
+            display: none;
+            max-height: 158px;
+            _height: 158px;
+            width: 468px;
+            li {
+                -moz-padding-end: 20px !important;
+                cursor: pointer;
+                height: 22px;
+                line-height: 22px;
+                overflow: hidden;
+                padding: 0 10px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+        &:hover{
+            .select_list {
+                display: block!important;
+            }
+        }
+    }
+    .recommend {
+        margin-top: 10px;
+        .recommend_title {
+            height: 62px;
+            overflow: hidden;
+            line-height: 62px;
+            span.header_img {
+                width: 160px;
+                display: inline-block;
+                background: url(//img.tuniucdn.com/img/201605171824/boss3_driver/product_manager_recommend.png) 0 0 no-repeat transparent;
+                height: 62px;
+                vertical-align: middle;
+                margin-right: 15px;
+                float: left;
+            }
+            .key-words {
+                height: auto;
+                overflow: hidden;
+                padding-top: 18px;
+                margin-left: 190px;
+                span {
+                    display: block;
+                    float: left;
+                    -webkit-border-radius: 12px;
+                    -moz-border-radius: 12px;
+                    border-radius: 12px;
+                    padding: 0 10px;
+                    background: #fff;
+                    color: #f60;
+                    border: 1px solid #f60;
+                    margin-left: 10px;
+                    line-height: 23px;
+                    height: 25px;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                }
+            }
+        }
+        .recommend_list_box {
+            position: relative;
+            overflow: visible;
+        }
+        .recommend_list {
+            position: relative;
+            overflow: hidden;
+            max-height: 160px;
+            padding: 10px 0 0 66px;
+            cursor: pointer;
+            line-height: 16px;
+            .rec-tit {
+                display: block;
+                float: left;
+                width: 20px;
+                color: #ff9419;
+                position: relative;
+                
+            }
+            .rec-cont {
+                margin-left: 20px;
+                display: block;
+                float: none;
+            }
+        }
+    }
+}
+.price_bar {
+    position: absolute;
+    width: 390px;
+    left: 60px;
+    top: 15px;
+    dd.price_cont {
+        margin-right: 20px;
+    }
+    dl dd {
+        line-height: 30px;
+    }
+    dl dt {
+        width: 66px;
+        line-height: 30px;
+        color: #666;
+        &.price_title {
+            line-height: 41px;
+             span {
+                display: inline-block;
+                text-align: justify;
+                text-justify: distribute-all-lines;
+                -moz-text-align-last: justify;
+                text-align-last: justify;
+                width: 4em;
+                letter-spacing: 0;
+                font-size: 12px;
+            }
+        }
+    }
+    .price_dollar {
+        font-size: 18px;
+        color: #f80;
+    }
+    .sale_price {
+        font-size: 30px;
+        color: #ff6000;
+        margin-right: 5px;
+        font-weight: 700;
+    }
+    .price_tips {
+        margin-left: 0;
+        display: inline-block;
+        text-decoration: none;
+        color: #f60;
+    }
+    .tour_price {
+        margin-left: 10px;
+        text-decoration: line-through;
+        display: none !important;
+    }
+    .act-rule-tit {
+        color: #f80;
+        text-decoration: underline;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+}
+
+
+

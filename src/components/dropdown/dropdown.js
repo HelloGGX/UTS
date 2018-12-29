@@ -640,6 +640,6 @@ const DropDown = (function ($) {
     })
     return this
   }
-})($)
+})(window.jQuery)
 
 export default DropDown

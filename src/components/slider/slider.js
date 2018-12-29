@@ -115,7 +115,7 @@ let Slider = (function ($) {
     }
   }
   return Slider
-})($)
+})(window.jQuery)
 
 let slider = new Slider()
 slider.init()

@@ -294,6 +294,6 @@ const Input = (($) => {
   }
 
   return Input
-})($)
+})(window.jQuery)
 
 export default Input

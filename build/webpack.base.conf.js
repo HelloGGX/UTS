@@ -18,8 +18,10 @@ const chunkHash = (env) => {
   }
 }
 const extractCss = (env) => new MiniCssExtractPlugin({
-  filename: `css/[name]-[contenthash].css`,
-  chunkFilename: `css/[name]-${chunkHash(env)}.css`
+  // filename: `css/[name]-[contenthash:5].css`,
+  // chunkFilename: `css/[name]-[contenthash:5].css`
+  filename: `css/[name]-bundle.css`,
+  chunkFilename: `css/[name]-bundle.css`
   // filename: 'css/[name]-bundle-[chunkHash:5].css',
   // chunkFilename: 'css/[name]-bundle-[chunkHash:5].css'
 })
@@ -70,7 +72,7 @@ const generateConfig = (env) => {
         {
           loader: 'file-loader',
           options: {
-            name: `[name]-${chunkHash(env)}.[ext]`,
+            name: `[name]-[hash:5].[ext]`,
             publicPath: '../imgs',
             outputPath: path
           }
@@ -80,7 +82,7 @@ const generateConfig = (env) => {
         {
           loader: 'url-loader', // 带图片转base64功能
           options: {
-            name: `[name]-${chunkHash(env)}.[ext]`,
+            name: `[name]-[hash:5].[ext]`,
             limit: 1600, // 1600=16kb
             outputPath: path,
             publicPath: './crm/dist/imgs'
@@ -94,7 +96,7 @@ const generateConfig = (env) => {
         {
           loader: 'file-loader',
           options: {
-            name: `[name]-${chunkHash(env)}.[ext]`,
+            name: `[name]-[hash:5].[ext]`,
             publicPath: '../fonts',
             outputPath: url
           }
@@ -104,7 +106,7 @@ const generateConfig = (env) => {
         {
           loader: 'url-loader', // 带转base64功能
           options: {
-            name: `[name]-${chunkHash(env)}.[ext]`,
+            name: `[name]-[hash:5].[ext]`,
             limit: 1600, // 1600=16kb
             publicPath: '../fonts',
             outputPath: url

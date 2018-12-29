@@ -93,6 +93,6 @@ var sider = (function ($) { // 侧边栏函数
   }
   // augment(Sider, Mixin)// Sider继承公共方法函数Mixin
   return editOpts(Sider)
-})($)
+})(window.jQuery)
 
 export default sider
