@@ -1,15 +1,27 @@
+@import '../../common/css/variable.less';
 
+.wrapper_bg {
+    background-color: #f0f2f5;
+    padding-bottom: 20px;
+}
 .wrapper {
     height: auto;
     font-family: "microsoft yahei";
     width: 1210px;
     margin: 0 auto;
+    position: relative;
+}
+.content {
+    width: 1190px;
+    font-family: "microsoft yahei";
+    margin: auto;
+    height: auto;
 }
 .product_info {
-    width: 1128px;
     border: 1px solid #DDD;
     padding: 0px;
     background-color: #FFF;
+    position: relative;
     .product_name_bar {
         line-height: 32px;
         h1 {
@@ -26,6 +38,9 @@
             float: none;
         }
     }
+    .panel-body {
+        padding: 30px;
+    }
 }
 .content {
     .product-info-name {
@@ -41,7 +56,7 @@
             height: 14px;
             vertical-align: middle;
             position: relative;
-            background: url(//ssl1.tuniucdn.com/img/201512142100/tour/tour_icon.png) 0 -18px no-repeat;
+            background: url(../../imgs/select.png) 0 -18px no-repeat;
         }
     }
     .product_outline {
@@ -55,7 +70,7 @@
     }
 }
 .priduct_no {
-    color: #F80;
+    color: @color-sub-theme;
 }
 .product_img_box {
     height: 340px;
@@ -160,11 +175,11 @@
         height: 98px;
         position: relative;
         width: 662px;
-        background: url(//img.tuniucdn.com/img/201602262051/boss3_driver/zjjia_hotel_bg.png) 0 0 no-repeat transparent;
+        background-color: #181f28;
         left: -60px;
     }
     .product_price_bar_height {
-        background: url(//img.tuniucdn.com/img/201605051732/boss3_selfTour/zjjia_hotel_bg_1200.png) 0 0 no-repeat transparent;
+        background: #181f28;
         height: 123px;
         height: 71px;
         background-position: 0 -51px;
@@ -226,12 +241,12 @@
                     -webkit-box-sizing: border-box;
                     -moz-box-sizing: border-box;
                     box-sizing: border-box;
-                    border: 1px solid #f80;
+                    border: 1px solid @color-sub-theme;
                     font-size: 12px;
                     position: relative;
                     top: 4px;
                     margin-right: 5px;
-                    color: #f80;
+                    color: @color-sub-theme;
                     -webkit-border-radius: 2px;
                     -moz-border-radius: 2px;
                     border-radius: 2px;
@@ -252,7 +267,7 @@
                     box-sizing: border-box;
                     span {
                         display: inline;
-                        color: #f80;
+                        color: @color-sub-theme;
                         cursor: pointer;
                         margin-left: 5px;
                         position: absolute;
@@ -322,18 +337,18 @@
                 /* font-weight: 700; */
                 margin-left: 0;
                 a {
-                    color: #ff9419;
+                    color: @color-sub-theme;
                 }
             }
             .evaluate-re .evaluate-count {
-                color: #ff9419;
+                color: @color-sub-theme;
             }
         }
     }
     .order_city_order {
-        background: #f3eeed;
+        
         width: 570px;
-        background: #fff;
+       
         /* border-top: 1px dashed #ddd; */
         padding-left: 0;
         margin-left: 0;
@@ -379,17 +394,19 @@
         i {
             display: none;
             position: absolute;
-            bottom: 0;
+            top: 0;
             right: 0;
-            width: 10px;
-            height: 11px;
+            width: 20px;
+            height: 20px;
             font-size: 0;
+            background-image: url('../../imgs/select.png');
+            background-repeat: no-repeat;
+            background-size: cover;
             line-height: 0;
-            background: url(//ssl1.tuniucdn.com/img/2014090316/zizhu0520/iconsprite.png) no-repeat right -27px;
             overflow: hidden;
         }
          &.active{
-            border: 1px solid #ff9419;
+            border: 1px solid @color-sub-theme;
             i{
                 display: block;
             }
@@ -402,6 +419,7 @@
         float: left;
         margin-top: 2px;
         z-index: 100;
+        width: 400px;
         .select_con {
             height: 22px;
             line-height: 22px;
@@ -410,7 +428,7 @@
             width: 448px;
             background-position: 448px -50px;
             &.active {
-                border-color: #f80;
+                border-color: @color-sub-theme;
             }
         }
         .select_result {
@@ -442,11 +460,6 @@
                 white-space: nowrap;
             }
         }
-        &:hover{
-            .select_list {
-                display: block!important;
-            }
-        }
     }
     .recommend {
         margin-top: 10px;
@@ -476,8 +489,8 @@
                     border-radius: 12px;
                     padding: 0 10px;
                     background: #fff;
-                    color: #f60;
-                    border: 1px solid #f60;
+                    color: @color-sub-theme;
+                    border: 1px solid @color-sub-theme;
                     margin-left: 10px;
                     line-height: 23px;
                     height: 25px;
@@ -502,7 +515,7 @@
                 display: block;
                 float: left;
                 width: 20px;
-                color: #ff9419;
+                color: @color-sub-theme;
                 position: relative;
                 
             }
@@ -528,7 +541,7 @@
     dl dt {
         width: 66px;
         line-height: 30px;
-        color: #666;
+        color: #fff;
         &.price_title {
             line-height: 41px;
              span {
@@ -545,11 +558,11 @@
     }
     .price_dollar {
         font-size: 18px;
-        color: #f80;
+        color: #fff;
     }
     .sale_price {
         font-size: 30px;
-        color: #ff6000;
+        color: @color-sub-theme;
         margin-right: 5px;
         font-weight: 700;
     }
@@ -557,7 +570,7 @@
         margin-left: 0;
         display: inline-block;
         text-decoration: none;
-        color: #f60;
+        color: #fff;
     }
     .tour_price {
         margin-left: 10px;
@@ -565,12 +578,429 @@
         display: none !important;
     }
     .act-rule-tit {
-        color: #f80;
+        color: #fff;
         text-decoration: underline;
         margin-left: 20px;
         cursor: pointer;
     }
 }
+.triptags {
+    padding: 0;
+    min-height: 40px;
+    font-family: "microsoft yahei";
+    overflow: hidden;
+}
+.tripItineraryDescription {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+    color: #404040;
+    line-height: 24px;
+    margin: 0 10px 10px;
+    padding: 5px 10px;
+    margin-left: 0;
+    margin-right: 0;
+}
+#triptags li.iti_tour {
+    width: 108px;
+    height: 50px;
+    position: relative;
+    background-image: none!important;
+    span {
+        font-size: 12px;
+        text-align: center;
+        display: block;
+        height: 10px;
+        line-height: 10px;
+        cursor: pointer;
+    }
+}
+.general_infor {
+    width: 1190px;
+    margin: auto;
+    height: auto;
+    font-family: "microsoft yahei";
+    &.panel-switch {
+        margin-bottom: 0;
+        #triptags li.iti_tour {
+            cursor: pointer;
+            margin: 0;
+            padding: 7px 0;
+            width: 118px;
+            border: none;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            background: #f8f8f8;
+            &.xc_selected,&:hover {
+                color: #22c233;
+            }
+            a {
+                height: 23px;
+                line-height: 23px;
+                width: 100%;
+                margin: 0;
+                color: inherit;
+            }
+            span {
+                height: auto;
+                line-height: 1;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-top: -3px;
+            }
+            &.xc_selected {
+                background: #fff;
+                border-bottom: 0 none;
+            }
+        }
+        .journey-wrapper {
+            padding: 0;
+            background: #fff;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0;
+            border: 1px solid #DDD;
+            border-bottom: 0 none;
+            .tripItineraryDescription {
+                margin-bottom: 0;
+                background: #fff;
+                border: 0;
+                padding-left: 0;
+                font-size: 12px;
+                p {
+                    word-break: break-all;
+                    margin: 0;
+                    span {
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+        .triptags {
+            margin-left: 0;
+            height: 51px;
+            overflow: visible;
+            li {
+                a {
+                    width: 69px;
+                    height: 36px;
+                    display: block;
+                    line-height: 36px;
+                    color: #333;
+                    text-align: center;
+                    font-size: 14px;
+                    font-family: "microsoft yahei";
+                }
+                &.xc_selected a {
+                    width: 73px;
+                    height: 40px;
+                    display: block;
+                    line-height: 40px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .tripDescBox {
+            padding: 10px 40px 10px 20px;
+        }
+    }
+    &.panel-tab {
+        margin-bottom: 0;
+    }
+    .panel-body {
+        padding: 0;
+    }
+}
+.pkg-detail-wrap {
+    height: 44px;
+    position: relative;
+    z-index: 50;
+    top: 1px;
+}
+.main_nav {
+    width: 1190px;
+    height: 45px;
+    line-height: 45px;
+    color: #FFF;
+    font-size: 15px;
+    background-color:#181f28;
+    position: relative;
+    ul {
+        height: 45px;
+        li {
+            display: inline-block;
+            margin: 0;
+            cursor: pointer;
+            a {
+                color: #fff;
+                cursor: pointer;
+                text-decoration: none;
+            }
+        }
+        .active {
+            height: 45px;
+            font-weight: 600;
+            a{
+                color: #fff !important;
+                background-color: @color-sub-theme !important;
+                border: none!important;
+                border-radius: 0;
+                display: inline-block;
+                line-height: 45px;
+                padding: 0 20px;
+            }
+        }
+    }
+    &.affix {
+        top: 0px
+    }
+}
+.main_block {
+    position: relative;
+    border: none;
+    padding: 40px 40px 40px 20px;
+    background-color: #FFF;
+    margin-bottom: 20px;
+    .detail-title {
+        width: 72px;
+        height: 72px;
+        position: absolute;
+        top: 30px;
+        left: 20px;
+        background: url(//img.tuniucdn.com/img/201602262051/boss3_driver/title_bg.png) 0 0 no-repeat transparent;
+        float: left;
+        border-bottom: none;
+        p {
+            width: 70px;
+            text-align: center;
+            font-size: 20px;
+            color: #FFF;
+            line-height: 24px;
+            margin-top: 10px;
+        }
+    }
+    .block_title {
+        width: 72px;
+        height: 72px;
+        background: url(//img.tuniucdn.com/img/201602262051/boss3_driver/title_bg.png) 0 0 no-repeat transparent;
+        float: left;
+        p {
+            width: 70px;
+            text-align: center;
+            font-size: 20px;
+            color: #FFF;
+            line-height: 24px;
+            margin-top: 10px;
+        }
+    }
+    .block_content {
+        float: right;
+        width: 1030px;
+        padding-left: 26px;
+    }
+}
+.content {
+    .pkg-detail-infor {
+        font-size: 14px;
+    }
+    .main_block {
+        margin-bottom: 0;
+    }
+}
+.panel-tour{
+    .main_block {
+        position: relative;
+        padding: 54px 50px 25px 120px;
+    }
+}
+.section-box {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 0;
+    border: 1px solid #ddd;
+    background: #fff;
+    .section-box-head {
+        position: absolute;
+        left: 20px;
+        top: 30px;
+        width: 70px;
+        height: 70px;
+        padding: 10px 15px;
+        background: url(//ssl4.tuniucdn.com/img/2016/tour/section-head.png) 0 0 no-repeat;
+        font-size: 20px;
+        line-height: 22px;
+        color: #fff;
+    }
+    .section-box-body {
+        padding: 40px 50px 40px 120px;
+    }
+}
+.section-feature {
+    .section-box-body {
+        min-height: 50px;
+        .section-feature-block {
+            margin-bottom: 30px;
+            .section-feature-title {
+                margin-bottom: 10px;
+                color: #111;
+                font-size: 16px;
+                font-weight: bold;
+                background: #f6f6f6;
+                height: 30px;
+                line-height: 20px;
+                padding: 6px 0 5px;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                span {
+                    border-left: 4px solid #22c233;
+                    padding-left: 10px;
+                    margin-left: 10px;
+                }
+            }
+            .section-feature-item {
+                margin-bottom: 10px;
+            }
+            .section-feature-item-list {
+                color: #333;
+                font-size: 14px;
+                line-height: 30px;
+                li {
+                    position: relative;
+                    list-style: none;
+                    margin-bottom: 10px;
+                    text-align: justify;
+                }
+            }
+            .section-feature-album {
+                overflow: hidden;
+                ul {
+                    margin: 0 -10px;
+                    overflow: hidden;
+                    li {
+                        float: left;
+                        list-style: none;
+                        width: 100%;
+                        .section-feature-album-inner {
+                            margin: 0 10px;
+                            overflow: hidden;
+                            img {
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.detail-title {
+    border-bottom: 2px solid #2E9900;
+    height: 27px;
+    margin-bottom: 20px;
+}
+.detail-sub-title {
+    height: 30px;
+    margin-top: 30px;
+    padding-left: 12px;
+    color: #2E9900;
+    font: 400 16px/30px "Microsoft Yahei";
+    background-color: #f8f9f8;
+     i {
+        float: left;
+        display: inline;
+        height: 15px;
+        width: 4px;
+        margin: 8px 5px 0 0;
+        font-size: 0;
+        line-height: 0;
+        background-color: #8bca70;
+    }
+}
+.new_sub_title {
+    font-size: 14px;
+    color: #333;
+    margin: 30px 0 5px;
+}
+.first_title {
+    margin-top: 10px;
+}
+.panel-tour{
+    .tour-section {
+        margin-bottom: 30px;
+    }
+    .section-title {
+        background: #f6f6f6;
+        height: 30px;
+        line-height: 20px;
+        padding: 6px 0 5px;
+        margin: 0 0 15px 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        span {
+            display: block;
+            border-left: 4px solid #22c233;
+            padding-left: 10px;
+            margin-left: 10px;
+            height: 19px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+            text-align: left;
+        }
+    }
+    .section-cont {
+        padding: 10px 20px;
+    }
+    .tour-outline ul li {
+        margin-bottom: 15px;
+        h5 {
+            font-size: 14px;
+            line-height: 21px;
+            color: #111;
+            margin-bottom: 3px;
+            .time {
+                display: block;
+                float: left;
+                width: 70px;
+                color: #666;
+                font-weight: bold;
+            }
+        }
+        ul {
+            margin-left: 70px;
+            line-height: 28px;
+            color: #666;
+            li {
+                margin-bottom: 0;
+            }
+            i {
+                position: relative;
+                top: 7px;
+                display: block;
+                float: left;
+                margin-right: 14px;
+            }
+        }
+    }
+}
+.contract_con {
+    padding: 10px 0 0 10px;
+    margin: 0 auto;
+    line-height: 20px;
+    color: #666;
+    overflow: hidden;
+    line-height: 26px;
+    dt {
+        width: 85px;
+    }
+}
+ 
+
+
 
 
 

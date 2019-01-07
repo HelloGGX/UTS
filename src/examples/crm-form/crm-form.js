@@ -16,7 +16,7 @@ const CrmForm = (function ($) {
       return VERSION
     }
     init () {
-      $('.dropdown-single').dropdown({
+      $('.dd-single').dropdown({
         readOnly: true,
         input: '<input type="text" maxLength="20" placeholder="请输入搜索">',
         choice: function () {

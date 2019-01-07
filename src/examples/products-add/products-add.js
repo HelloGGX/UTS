@@ -15,19 +15,6 @@ const ProductsAdd = (function () {
       return VERSION
     }
     init () {
-      $('.dropdown-single').dropdown({
-        readOnly: true,
-        searchable: false,
-        choice: function () {
-          console.log(this.$select[0].value)
-        }
-      })
-      $('.dropdown-single-store').dropdown({
-        readOnly: true,
-        choice: function () {
-          console.log(this.$select[0].value)
-        }
-      })
       $('#addPrice').on('click', () => {
         this.addPrice()
       })

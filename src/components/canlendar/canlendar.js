@@ -57,21 +57,24 @@ const Calendar = (function ($) {
 
     var clickitem = function () {
       var d = $(this).attr('data-event-day')
-      $('div.c-event-item[data-event-day="' + d + '"]').siblings().removeAttr('style')
-      $('div.c-event-item[data-event-day="' + d + '"]').css({
-        'font-weight': '700',
-        'color': '#fff',
-        'background': '-webkit-linear-gradient(left, #01c2e6 , #1160ff)'
-      })
-      $('div.c-event-item[data-event-day="' + d + '"]').siblings().children().removeAttr('style')
-      $('div.c-event-item[data-event-day="' + d + '"]').children().css('color', 'white')
-      $('div.c-event[data-event-day="' + d + '"]').siblings().removeAttr('style')
-      $('div.c-event[data-event-day="' + d + '"]').css({
-        'box-shadow': ' 0 0 8px #cccccc',
-        'font-weight': '700',
-        'color': '#fff',
-        'background': '-webkit-linear-gradient(left, #01c2e6 , #1160ff)'
-      })
+      // $('div.c-event-item[data-event-day="' + d + '"]').siblings().removeAttr('style')
+      // $('div.c-event-item[data-event-day="' + d + '"]').css({
+      //   'font-weight': '700',
+      //   'color': '#ffffff',
+      //   'background': '-webkit-linear-gradient(left, #01c2e6 , #1160ff)'
+      // })
+      // $('div.c-event-item[data-event-day="' + d + '"]').siblings().children().removeAttr('style')
+      // $('div.c-event-item[data-event-day="' + d + '"]').children().css('color', 'white')
+      // $('div.c-event[data-event-day="' + d + '"]').siblings().removeAttr('style')
+      // $('div.c-event[data-event-day="' + d + '"]').css({
+      //   'box-shadow': ' 0 0 8px #cccccc',
+      //   'font-weight': '700',
+      //   'color': '#fff',
+      //   'background': '-webkit-linear-gradient(left, #01c2e6 , #1160ff)'
+      // })
+      $('div.c-event-item[data-event-day="' + d + '"]').addClass('active').siblings().removeClass('active')
+      $('div.c-event[data-event-day="' + d + '"]').addClass('active').siblings().removeClass('active')
+      settings.callback($('div.c-event-item[data-event-day="' + d + '"]').find('.name').html())
     }
 
     var nextMonth = function () {
@@ -118,6 +121,7 @@ const Calendar = (function ($) {
           async: false,
           success: function (result) {
             settings.events = result
+            console.log(settings.events)
           }
         })
       }
@@ -169,20 +173,25 @@ const Calendar = (function ($) {
           cDay.addClass('c-day c-pad-top')
           if (day === dDay && adMonth === dMonth && adYear === dYear) {
             cDay.addClass('c-today')
+            // cDay.html(`<span>今天</span>`)
           }
           for (var j = 0; j < settings.events.length; j++) {
             var d = settings.events[j].datetime
-
+            var price = settings.events[j].price
             if (d.getDate() === day && (d.getMonth() - 1) === dMonth && d.getFullYear() === dYear) {
               cDay.addClass('c-event').attr('data-event-day', d.getDate())
+              cDay.attr('data-event-price', price)
+              cDay.html(`<span>￥${price}</span>`)
               cDay.on('mouseover', mouseOverEvent).on('mouseleave', mouseLeaveEvent).on('click', clickitem)
             }
             if (d.getDate() === day && d.getMonth() === 0 && dMonth === 11 && (d.getFullYear() - 1) === dYear) {
               cDay.addClass('c-event').attr('data-event-day', d.getDate())
+              cDay.attr('data-event-price', price)
+              cDay.html(`<span>￥${price}</span>`)
               cDay.on('mouseover', mouseOverEvent).on('mouseleave', mouseLeaveEvent).on('click', clickitem)
             }
           }
-          cDay.html(day++)
+          cDay.prepend(day++)
         } else {
           cDay.addClass('c-day-next-month c-pad-top')
           //                  cDay.html(dayOfNextMonth++);
@@ -192,13 +201,13 @@ const Calendar = (function ($) {
       var eventList = $('<div/>').addClass('c-event-list')
       for (let i = 0; i < settings.events.length; i++) {
         let d = settings.events[i].datetime
-        console.log(d.getMonth(), (d.getMonth() - 1), dMonth)
+        // console.log(d.getMonth(), (d.getMonth() - 1), dMonth)
         if ((d.getMonth() - 1) === dMonth && d.getFullYear() === dYear) {
           let date = lpad(d.getMonth(), 2) + '/' + lpad(d.getDate(), 2) + ' ' + lpad(d.getHours(), 2) + ':' + lpad(d.getMinutes(), 2)
           let item = $('<div/>').addClass('c-event-item')
           let a = $('<a/>').addClass('c-event-item-a').attr('href', settings.events[i].href)
           let title = $('<div/>').addClass('title').html(date + '  ' + settings.events[i].title)
-          let 活动描述 = $('<div/>').addClass('活动描述').html(settings.events[i].活动描述)
+          let 活动描述 = $('<div/>').addClass('name').html(settings.events[i].name)
           item.attr('data-event-day', d.getDate())
           item.on('mouseover', mouseOverItem).on('mouseleave', mouseLeaveItem).on('click', clickitem)
 
@@ -211,7 +220,7 @@ const Calendar = (function ($) {
           let item = $('<div/>').addClass('c-event-item')
           let a = $('<a/>').addClass('c-event-item-a').attr('href', settings.events[i].href)
           let title = $('<div/>').addClass('title').html(date + '  ' + settings.events[i].title)
-          let 活动描述 = $('<div/>').addClass('活动描述').html(settings.events[i].活动描述)
+          let 活动描述 = $('<div/>').addClass('name').html(settings.events[i].name)
           item.attr('data-event-day', d.getDate())
           item.on('mouseover', mouseOverItem).on('mouseleave', mouseLeaveItem).on('click', clickitem)
 
@@ -237,10 +246,11 @@ const Calendar = (function ($) {
       var cMonbottom = $('<div/>').addClass('c-month-bottom')
       cMonth.append(cMonbottom)
       if ($('.c-today').is('.c-event')) {
-        cMonbottom.html('有课')
+        cMonbottom.html('有产品')
       } else {
         cMonbottom.html(' ')
       }
+      $('.recommend').css('marginTop', $('.c-event-list').height() + 'px')
     }
 
     return print()
@@ -254,17 +264,21 @@ const Calendar = (function ($) {
 
   // plugin defaults
   $.fn.eCalendar.defaults = {
-    weekDays: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-    months: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+    // weekDays: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+    // months: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+    weekDays: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+    months: ['01', '02', '03', '04', '05', '06',
+      '07', '08', '09', '10', '11', '12'
+    ],
     textArrows: {
       previous: '',
       next: ''
     },
     eventTitle: '',
     url: '',
-    events: []
+    events: [],
+    callback: function () { }
   }
-
   return eCalendar
 }(window.jQuery))
 
