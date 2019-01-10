@@ -221,7 +221,7 @@ const generateConfig = (env) => {
         filename: `js/[name].${chunkHash(env)}.js`,
         name: true,
         // filename: 'js/libs/[name].[hash:5].js',
-        minChunks: Math.ceil(globalConfig.pages.length / 3), // 至少被1/3页面的引入才打入common包
+        minChunks: 2, // Math.ceil(globalConfig.pages.length / 3), // 至少被1/3页面的引入才打入base包
         cacheGroups: {
           base: {
             name: 'base',

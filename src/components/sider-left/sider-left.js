@@ -88,6 +88,13 @@ var sider = (function ($) { // 侧边栏函数
       }
     },
     cancel: function (dom) {
+      if ($(dom).hasClass('uts-menu-submenu-title')) {
+        $(dom).parent('.uts-menu-submenu').removeClass('uts-menu-submenu-open')
+        $(dom).next('ul').addClass('uts-menu-hidden')
+      } else {
+        $(dom).parent('.uts-menu-sub').addClass('uts-menu-hidden')
+        $(dom).parents('.uts-menu-submenu').removeClass('uts-menu-submenu-open')
+      }
       $(dom).removeClass('uts-menu-item-selected').removeClass('uts-menu-submenu-active')
     }
   }

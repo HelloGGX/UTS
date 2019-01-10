@@ -6,9 +6,8 @@
     position: absolute;
     top: 0px;
     left: 0px;
+    background-color: #FFFFFF;
     border: none;
-    border-bottom: 1px solid @color-theme;
-    overflow: hidden;
     z-index: 999;
     .uts-tab-title {
         border: none;
@@ -19,6 +18,7 @@
         width: auto;
         position: relative;
         border-right: 1px solid #E5E5E5;
+        border-bottom: 1px solid @color-theme;
         -moz-box-shadow:0px 4px 6px #f2f2f2; -webkit-box-shadow:0px 4px 6px #f2f2f2; box-shadow:0px 4px 6px #f2f2f2;
     }
     .uts-btn-group {
@@ -48,7 +48,7 @@
             cursor: pointer;
             i {
                 font-weight: normal;
-                font-size: 15px;
+                font-size: 22px;
                 color: #ffffff;
             }
             cite {
@@ -57,6 +57,43 @@
                 padding-left: 1px;
                 color: #ffffff;
             
+            }
+            .uts-nav-child{
+                display: none;
+                top: 40px;
+                left: auto;
+                right: 0;
+                position: absolute;
+                min-width: 100%;
+                padding: 5px 0;
+                box-shadow: 0 2px 4px rgba(0,0,0,.12);
+                border: 1px solid #d2d2d2;
+                background-color: #fff;
+                z-index: 100;
+                border-radius: 2px;
+                white-space: nowrap;
+                dd{
+                    position: relative;
+                    a {
+                        display: block;
+                        padding: 0 20px;
+                        color: #666666;
+                        transition: all .3s;
+                        font-size: 14px;
+                        text-decoration: none;
+                        -webkit-transition: all .3s;
+                        line-height: 30px;
+                        &:hover {
+                            background-color: #f2f2f2;
+                        }
+                    }
+                }
+            }
+            &:hover {
+                .uts-nav-child{
+                    transition: all .3s;
+                    display: block!important;
+                 }
             }
         }
     }
@@ -123,17 +160,25 @@
         text-align: center;
         cursor: pointer;
         .uts-tab-close {
-            position: relative;
+           position: absolute;
+            top: 0;
+            right: 0;
+            /* margin-top: -9px; */
             display: inline-block;
+            vertical-align: middle;
             width: 18px;
-            height: 18px;
-            line-height: 20px;
+            height: 100%;
+            /* line-height: 20px; */
             margin-left: 8px;
             text-align: center;
             font-size: 14px;
             color: #c2c2c2;
-            transition: all .2s;
-            -webkit-transition: all .2s;
+            transition: all 0.2s;
+            -webkit-transition: all 0.2s;
+            &:hover {
+                background-color:#f80;
+                color: #fff;
+            }
         }
         &:before {
             content: "";

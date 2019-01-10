@@ -347,3 +347,7 @@ template {
 [hidden] {
   display: none;
 }
+a {
+    color: #333;
+    text-decoration: none;
+}

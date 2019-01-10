@@ -28,6 +28,8 @@ const Tab = (function ($) {
     }
     init () {
       let _thi = this
+
+      this.initTab()
       $(document)
         .on(Event.CLICK, Selector.DATA_TOGGLE, function (e) {
           e.preventDefault()
@@ -43,6 +45,17 @@ const Tab = (function ($) {
             _thi.callBack(el, 'open')
           }
         })
+      $('.uts-nav-child').on('click', (e) => {
+        let target = $(e.target).parent()
+        let eventName = target.attr('utsadmin-event')
+        if (eventName === 'closeThisTabs') {
+          this._closeThisTabs()
+        } else if (eventName === 'closeOtherTabs') {
+          this._closeOtherTabs()
+        } else {
+          this._closeAllTabs()
+        }
+      })
       $('.uts-tab-title li').click(function (e) {
         $(e.currentTarget).addClass('uts-tab-active').siblings().removeClass('uts-tab-active')
       })
@@ -52,10 +65,16 @@ const Tab = (function ($) {
       $('#goRight').on('click', () => {
         this.goRight()
       })
-      if (window.sessionStorage.getItem('curmenu')) { // 如果获取到session里面有值
-        this.curNav = JSON.parse(window.sessionStorage.getItem('curmenu'))
+    }
+    initTab () { // 根据session来初始化tab内容
+      var curmenu = window.sessionStorage.getItem('curmenu') === 'undefined'
+        ? undefined : window.sessionStorage.getItem('curmenu') === null
+          ? null : JSON.parse(window.sessionStorage.getItem('curmenu'))
+      if (curmenu) { // 如果获取到session里面有值
+        this.curNav = curmenu
         this.menu = JSON.parse(window.sessionStorage.getItem('menu'))
-        for (let i = 0; i < this.menu.length; i++) {
+        const len = this.menu.length
+        for (let i = 0; i < len; i++) {
           tabMap.push(this._getId(this.menu[i].tabId))
           let tpl = this.tpl({ id: this._getId(this.menu[i].tabId), clas: this.menu[i].icon, txt: this.menu[i].title })
           let contentTpl = this.contentTpl({ id: this._getId(this.menu[i].tabId) })
@@ -64,7 +83,7 @@ const Tab = (function ($) {
         }
         $(`#tabs_${this._getId(this.curNav.tabId)}`).addClass('uts-tab-active').siblings().removeClass('uts-tab-active')
         $(`#content_${this._getId(this.curNav.tabId)}`).show().siblings().hide()
-        this.callBack($(`#menu_list_${this._getId(this.curNav.tabId)}`), 'open')// 触发回调函数
+        this.callBack($(`#${this.curNav.tabId}`), 'open')// 触发回调函数
         this.appendMove($(`#tabs_${this._getId(this.curNav.tabId)}`))
       }
     }
@@ -97,7 +116,7 @@ const Tab = (function ($) {
         </li>`
     }
     contentTpl () {
-      return `<div id="content_${arguments[0].id}" class="uts-card" style="background:#f0f2f5">
+      return `<div id="content_${arguments[0].id}" data-toggle="conItem" class="uts-card" style="background:#f0f2f5">
         <div class="uts-card-body"></div>
       </div>`
     }
@@ -106,9 +125,11 @@ const Tab = (function ($) {
       let id = arguments[0]
       let reg = /_(num[0-9]*)$/ig
       let result = null
-      id.replace(reg, function () {
-        result = arguments[1]
-      })
+      if (id) {
+        id.replace(reg, function () {
+          result = arguments[1]
+        })
+      }
       return result
     }
     // 公共函数
@@ -194,34 +215,43 @@ const Tab = (function ($) {
         this.curNav = JSON.stringify(curmenu)
         menu.splice((this.liIndex - 1), 1)
         $(element).remove()
+        $(`#content_${id}`).remove()
       } else { // 如果删除的是当前选中的tab
         $(element).remove()
+        $(`#content_${id}`).remove()
         let lastContent = $('.uts-wrapper-grid-content').children('.uts-card:last-child')
         let lashTab = $('.uts-tab-title').children('li:last-child')
         lastContent.show().siblings().hide()
         lashTab.addClass('uts-tab-active').siblings().removeClass('uts-tab-active')
         menu.splice((this.liIndex - 1), 1)
-        window.sessionStorage.setItem('curmenu', JSON.stringify(menu[menu.length - 1]))
+        if (JSON.stringify(menu[menu.length - 1])) {
+          window.sessionStorage.setItem('curmenu', JSON.stringify(menu[menu.length - 1]))
+        } else {
+          window.sessionStorage.setItem('curmenu', 'undefined')
+        }
+
         this.curNav = JSON.stringify(menu[menu.length - 1])
       }
 
       window.sessionStorage.setItem('menu', JSON.stringify(menu))
-      $(`#content_${id}`).remove()
     }
     appendMove (el) {
-      let titleWidth = $('#uts_title').width()
-      let liLen = $('#uts_tab_title').children('li').length
-      let tabWidth = liLen * 134
-      if (tabWidth > titleWidth - 68) {
-        $('#goLeft').removeClass('hide')
-        $('#goRight').removeClass('hide')
-      } else {
-        $('#goLeft').addClass('hide')
-        $('#goRight').addClass('hide')
-      }
-      let moveWidth = Math.ceil(143 - (titleWidth - el.position().left - 90))
-      if (moveWidth > 0) {
-        this._adjust(el)
+      if (el.length > 0) {
+        let titleWidth = $('#uts_title').width()
+        let liLen = $('#uts_tab_title').children('li').length
+        let tabWidth = liLen * 134
+        if (tabWidth > titleWidth - 68) {
+          $('#goLeft').removeClass('hide')
+          $('#goRight').removeClass('hide')
+        } else {
+          $('#goLeft').addClass('hide')
+          $('#goRight').addClass('hide')
+        }
+
+        let moveWidth = Math.ceil(143 - (titleWidth - el.position().left - 90))
+        if (moveWidth > 0) {
+          this._adjust(el)
+        }
       }
     }
     _adjust (el) {
@@ -257,6 +287,56 @@ const Tab = (function ($) {
       $('#uts_tab_title').css({
         'marginLeft': `${minTranslate}px`
       })
+    }
+    _closeThisTabs () {
+      const _thi = this
+      let el = null
+      if (tabMap.length === 1) {
+        el = $(`#menu_list_${tabMap[0]}`)
+      } else if (tabMap.length === 0) {
+        return false
+      }
+      return (function () {
+        let id = _thi._getId($('.uts-tab-active').attr('id'))
+        if (el) {
+          _thi.close($('.uts-tab-active'), id)
+          _thi.callBack(el, 'close')
+        } else {
+          _thi.close($('.uts-tab-active'), id)
+          let newid = _thi._getId($('.uts-tab-active').attr('id'))
+          _thi.callBack($(`#menu_list_${newid}`), 'open')
+        }
+      })()
+    }
+    _closeOtherTabs () {
+      let id = this._getId($('.uts-tab-active').attr('id'))
+      var curmenu = window.sessionStorage.getItem('curmenu') === 'undefined'
+        ? undefined : window.sessionStorage.getItem('curmenu') === null
+          ? null : JSON.parse(window.sessionStorage.getItem('curmenu'))
+      this.menu = []
+      this.menu.push(curmenu)
+      let menu = this.menu
+      _.remove(tabMap, function (n) {
+        return n !== id
+      })
+      if (curmenu) {
+        $('.uts-tab-active').siblings('li[data-toggle="tabItem"]').remove()
+        $(`#content_${id}`).siblings('div[data-toggle="conItem"]').remove()
+        window.sessionStorage.setItem('menu', JSON.stringify(menu)) // 打开的窗口
+      }
+    }
+    _closeAllTabs () {
+      let id = this._getId($('.uts-tab-active').attr('id'))
+      let el = $(`#menu_list_${id}`)
+      tabMap = []
+      this.menu = []
+
+      this.callBack(el, 'close')
+
+      window.sessionStorage.setItem('menu', JSON.stringify([]))
+      window.sessionStorage.setItem('curmenu', 'undefined')
+      $('#uts_home').nextAll().remove()
+      $('#content_home').nextAll().remove()
     }
   }
 

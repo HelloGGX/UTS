@@ -4,7 +4,6 @@ import sider from 'components/sider-left/sider-left'
 import { banner } from 'components/banner/banner'
 import { tab } from 'components/tab/tab'
 import { editOpts, Observer } from 'vendor/utils'
-import $ from 'jquery'
 
 /** ************当一个操作会影响到其他多个模块函数中的数据或者功能的时候用观察者模式******************* */
 
@@ -22,7 +21,9 @@ var index = (function () { // 侧边栏函数
     init: function () { // 初始化函数，公共函数这样写
       sider({
         callBack: function (e) {
-          tab({}).addTab(e)
+          if ($(e).attr('id')) {
+            tab({}).addTab(e)
+          }
         }
       }).init()// 侧边栏函数
 
