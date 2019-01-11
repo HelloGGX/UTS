@@ -43,7 +43,7 @@ const CrmForm = (function ($) {
     }
   }
   return CrmForm
-})($)
+})(window.jQuery)
 
 var crmform = new CrmForm()
 

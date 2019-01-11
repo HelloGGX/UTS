@@ -114,11 +114,12 @@ const Input = (($) => {
             _.debounce(function () {
               if ($(e.target).val() >= max) {
                 $(e.target).val(max)
-                return false
               } else if ($(e.target).val() < min) {
                 $(e.target).val(min)
+              } else if ($(e.target).val() === '') {
                 return false
               }
+              $(numInput).trigger('change')
             }, 220)()
           })
           if (isNaN(val)) {
@@ -127,7 +128,6 @@ const Input = (($) => {
             if ($(this._element).hasClass(ClassName.UP)) { // 如果按加号
               if ($(numInput).val() >= max) {
                 $(numInput).val(max)
-                return false
               } else if ($(numInput).val() < min) {
                 $(numInput).val(min)
               } else {
@@ -136,7 +136,6 @@ const Input = (($) => {
             } else if ($(this._element).hasClass(ClassName.DOWN)) { // 如果按减号
               if ($(numInput).val() <= min) {
                 $(numInput).val(min)
-                return false
               } else if ($(numInput).val() > max) {
                 $(numInput).val(max)
               } else {
@@ -144,7 +143,7 @@ const Input = (($) => {
               }
             }
           }
-          numInput.focus()
+          $(numInput).trigger('change')
         }
       }
 

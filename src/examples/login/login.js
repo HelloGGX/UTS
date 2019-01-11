@@ -112,7 +112,7 @@ let Login = (function ($) {
     // Static
   }
   return Login
-})($)
+})(window.jQuery)
 
 var login = new Login()
 
