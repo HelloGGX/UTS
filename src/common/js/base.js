@@ -36,6 +36,11 @@ const Base = (function ($) {
           _thi.calcuPrice(el, 0)
         }
       })
+      loading({
+        callBack: function (e) { // 点击触发缩小放大
+
+        }
+      }).init()// loading
     }
     calcuPrice (el, newVal) { // 计算合同总价格
       let index = $(el).index('input[data-toggle="price"]')

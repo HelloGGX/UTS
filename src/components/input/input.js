@@ -79,7 +79,7 @@ const Input = (($) => {
                 $(activeElement).find('input').prop('checked', false)
               }
             }
-          } else if (input.type === 'checkbox') {
+          } else if (input.type === 'checkbox') { // 如果是多选
             if ($(this._element).hasClass(ClassName.ACTIVE)) {
               triggerChangeEvent = false
 
@@ -144,6 +144,7 @@ const Input = (($) => {
             }
           }
           $(numInput).trigger('change')
+          $(numInput).focus()
         }
       }
 

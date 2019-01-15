@@ -62,7 +62,7 @@ const ProductsAdd = (function () {
                   <dl class="row">
                     <dt class="col-lg-1 col-md-1 col-sm-1">用餐</dt>
                     <dd class="col-lg-5 col-md-5 col-sm-5">
-                      <select placeholder="请选择用餐类型">
+                      <select placeholder="请选择用餐类型" class="uts-input input">
                         <option value="早">早</option>
                         <option value="早中晚">早中晚</option>
                         <option value="早中">早中</option>
@@ -121,7 +121,13 @@ const ProductsAdd = (function () {
       return `<tr class="uts-table-row uts-pages-forms-style-editable" id="NEW_TEMP_ID_${index}">
                 <td class="">
                 <span class="uts-table-row-indent" style="padding-left: 0px;"></span>
-                <input placeholder="价格类型" type="text" data-toggle="input" data-vali="special,notnull" class="uts-input input">
+                  <select placeholder="请选择价格类型" class="uts-input input">
+                    <option value="婴儿">婴儿</option>
+                    <option value="老人">老人</option>
+                    <option value="单房差">单房差</option>
+                    <option value="环保车">门票索道</option>
+                    <option value="其他">其他</option>
+                  </select>
                 </td>
                 <td class="">
                   <input placeholder="结算价格" type="text" data-toggle="input" data-vali="number,notnull" class="uts-input input">
