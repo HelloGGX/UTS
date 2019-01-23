@@ -45,7 +45,7 @@ const ProductsAdd = (function () {
                     <dt class="col-lg-1 col-md-1 col-sm-1">区间：</dt>
                     <dd class="col-lg-11 col-md-11 col-sm-11">
                       <div class="uts-form-textarea">
-                        <textarea placeholder="请输入当天你的区间详情" data-toggle="input" data-vali="notnull" rows="4" class="uts-input input"
+                        <textarea name="qj" placeholder="请输入当天你的区间详情" data-toggle="input" data-vali="notnull" rows="4" class="uts-input input"
                          maxlength="2000"></textarea>
                         <div class="count">
                           <span value="">0/2000</span>
@@ -56,13 +56,13 @@ const ProductsAdd = (function () {
                   <dl class="row">
                     <dt class="col-lg-1 col-md-1 col-sm-1">住宿</dt>
                     <dd class="col-lg-5 col-md-5 col-sm-5">
-                      <input placeholder="请输入酒店名称" type="text" data-toggle="input" data-vali="special,notnull" class="uts-input input">
+                      <input placeholder="请输入酒店名称" name="zs" type="text" data-toggle="input" data-vali="special,notnull" class="uts-input input">
                     </dd>
                   </dl>
                   <dl class="row">
                     <dt class="col-lg-1 col-md-1 col-sm-1">用餐</dt>
                     <dd class="col-lg-5 col-md-5 col-sm-5">
-                      <select placeholder="请选择用餐类型" class="uts-input input">
+                      <select name="yc" placeholder="请选择用餐类型" class="uts-input input">
                         <option value="早">早</option>
                         <option value="早中晚">早中晚</option>
                         <option value="早中">早中</option>
@@ -77,7 +77,7 @@ const ProductsAdd = (function () {
                     <dt class="col-lg-1 col-md-1 col-sm-1">形程：</dt>
                       <dd class="col-lg-11 col-md-11 col-sm-11">
                         <div class="uts-form-textarea">
-                          <textarea placeholder="请输入当天你的形程的路线详情" data-toggle="input" data-vali="notnull" rows="4" class="uts-input input"
+                          <textarea name="xcxq" placeholder="请输入当天你的形程的路线详情" data-toggle="input" data-vali="notnull" rows="4" class="uts-input input"
                           maxlength="2000"></textarea>
                           <div class="count">
                             <span value="">0/2000</span>
@@ -121,7 +121,7 @@ const ProductsAdd = (function () {
       return `<tr class="uts-table-row uts-pages-forms-style-editable" id="NEW_TEMP_ID_${index}">
                 <td class="">
                 <span class="uts-table-row-indent" style="padding-left: 0px;"></span>
-                  <select placeholder="请选择价格类型" class="uts-input input">
+                  <select name="qt" placeholder="请选择价格类型" class="uts-input input">
                     <option value="婴儿">婴儿</option>
                     <option value="老人">老人</option>
                     <option value="单房差">单房差</option>
@@ -130,7 +130,7 @@ const ProductsAdd = (function () {
                   </select>
                 </td>
                 <td class="">
-                  <input placeholder="结算价格" type="text" data-toggle="input" data-vali="number,notnull" class="uts-input input">
+                  <input name="qtPrice" placeholder="结算价格" type="text" data-toggle="input" data-vali="number,notnull" class="uts-input input">
                 </td>
                 <td class=""><span><a class="del" >删除</a></span></td>
               </tr>`

@@ -73,6 +73,7 @@ const Input = (($) => {
             if ($(this._element).hasClass(ClassName.ACTIVE)) {
               triggerChangeEvent = false
             } else {
+              $(input).prop('checked', true)
               $(this._element).addClass(ClassName.ACTIVE)
               if (activeElement) {
                 $(activeElement).removeClass(ClassName.ACTIVE)
@@ -82,7 +83,6 @@ const Input = (($) => {
           } else if (input.type === 'checkbox') { // 如果是多选
             if ($(this._element).hasClass(ClassName.ACTIVE)) {
               triggerChangeEvent = false
-
               $(this._element).removeClass(ClassName.ACTIVE)
               $(input).prop('checked', false)
             } else {

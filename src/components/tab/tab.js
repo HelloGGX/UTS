@@ -56,6 +56,7 @@ const Tab = (function ($) {
           this._closeAllTabs()
         }
       })
+
       $('.uts-tab-title li').click(function (e) {
         $(e.currentTarget).addClass('uts-tab-active').siblings().removeClass('uts-tab-active')
       })
@@ -199,7 +200,7 @@ const Tab = (function ($) {
     close (element, id) {
       // 删除tab后重置session中的menu和curmenu
       this.liIndex = $(element).index()
-
+      debugger
       _.remove(tabMap, function (n) {
         return n === id
       })
@@ -215,7 +216,9 @@ const Tab = (function ($) {
         this.curNav = JSON.stringify(curmenu)
         menu.splice((this.liIndex - 1), 1)
         $(element).remove()
+
         $(`#content_${id}`).remove()
+        this._adjust($(`#tabs_${this._getId(curmenu.tabId)}`))
       } else { // 如果删除的是当前选中的tab
         $(element).remove()
         $(`#content_${id}`).remove()
@@ -223,6 +226,7 @@ const Tab = (function ($) {
         let lashTab = $('.uts-tab-title').children('li:last-child')
         lastContent.show().siblings().hide()
         lashTab.addClass('uts-tab-active').siblings().removeClass('uts-tab-active')
+        this._adjust($(lashTab))
         menu.splice((this.liIndex - 1), 1)
         if (JSON.stringify(menu[menu.length - 1])) {
           window.sessionStorage.setItem('curmenu', JSON.stringify(menu[menu.length - 1]))
@@ -243,9 +247,15 @@ const Tab = (function ($) {
         if (tabWidth > titleWidth - 68) {
           $('#goLeft').removeClass('hide')
           $('#goRight').removeClass('hide')
+          $('#uts_tab_title').css({
+            'marginLeft': `40px`
+          })
         } else {
           $('#goLeft').addClass('hide')
           $('#goRight').addClass('hide')
+          $('#uts_tab_title').css({
+            'marginLeft': `0px`
+          })
         }
 
         let moveWidth = Math.ceil(143 - (titleWidth - el.position().left - 90))

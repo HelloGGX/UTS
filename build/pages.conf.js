@@ -22,6 +22,7 @@ const generatePage = function ({ title = '', entry = '', template = '', name = '
 const normalize = (title, pageName) => {
   const entry = {}
   const url = './src/examples/' + pageName + '/' + pageName
+  console.log(url)
   entry[pageName] = url
   return {
     title: title,

@@ -6,6 +6,7 @@ import Input from 'components/input/input'
 import Popup from 'components/popup/popup'
 import Dropdown from 'components/dropdown/dropdown'
 import Canlendar from 'components/canlendar/canlendar'
+import Error from 'components/error/error'
 import { loading } from 'components/loading/loading'
 
 import _ from 'lodash'
@@ -97,6 +98,7 @@ const Base = (function ($) {
         this.total = this.total + groupTotal
       }
       $('#total').find('span').html(this.total)
+      $('#total').find('input').val(this.total)
     }
   }
   return Base
@@ -113,7 +115,8 @@ export default {
   Popup,
   Dropdown,
   Canlendar,
-  loading
+  loading,
+  Error
 }
 // var deviceWidth
 // setHtmlFontSize()

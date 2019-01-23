@@ -39,6 +39,18 @@ const pages = [
   {
     title: '旅游产品详情页',
     pageName: 'products-detail'
+  },
+  {
+    title: '404错误页面',
+    pageName: '404'
+  },
+  {
+    title: '403错误页面',
+    pageName: '403'
+  },
+  {
+    title: '500错误页面',
+    pageName: '500'
   }
 ]
 const dependencies = [
